@@ -13,11 +13,13 @@
     "@wordpress/components": "^7.0.4"
   },
   "devDependencies": {
-    "@storybook/react": "^4.1.3",
-    "@storybook/addon-actions": "^4.1.3",
-    "@storybook/addon-links": "^4.1.3",
-    "@storybook/addons": "^4.1.3",
     "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.3",
+    "@storybook/addon-info": "^4.1.3",
+    "@storybook/addon-links": "^4.1.3",
+    "@storybook/addon-options": "^4.1.3",
+    "@storybook/addons": "^4.1.3",
+    "@storybook/react": "^4.1.3",
     "babel-loader": "^8.0.4"
   }
 }
