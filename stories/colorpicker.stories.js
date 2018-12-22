@@ -4,7 +4,7 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { ColorPalette } from '@wordpress/components';
+import { ColorPicker } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
 const styles = {
@@ -22,15 +22,16 @@ const CenterDecorator = (storyFn) => (
 
 addDecorator(CenterDecorator);
 
-storiesOf('ColorPalette', module)
+storiesOf('ColorPicker', module)
   .add('Basic', () => (
-      <ColorPalette
-        colors={ [ 
-          { name: 'red', color: '#f00' }, 
-          { name: 'white', color: '#fff' }, 
-          { name: 'blue', color: '#00f' }, 
-        ] } 
-        value={ '#f00' }
-      />
+    <ColorPicker
+      color={ '#f00' }
+    />
+  ))
+  .add('DisableAlpha', () => (
+    <ColorPicker
+      color={ '#f00' }
+      disableAlpha
+    />
   ));
 
