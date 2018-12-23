@@ -1,6 +1,5 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
-import '@storybook/addon-console';
 import { withConsole } from '@storybook/addon-console';
 
 import "./style.css";
