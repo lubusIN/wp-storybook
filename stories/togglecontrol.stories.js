@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { ToggleControl } from '@wordpress/components';
-import "@wordpress/components/build-style/style.css";
 
 const ToggleControlStyles = {
   width: '280px',

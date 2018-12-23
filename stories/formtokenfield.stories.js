@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { FormTokenField } from '@wordpress/components';
-import "@wordpress/components/build-style/style.css";
 
 const FormTokenFieldStyles = {
   width: '400px',

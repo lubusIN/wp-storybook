@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Popover } from '@wordpress/components';
-import "@wordpress/components/build-style/style.css";
 
 const PopoverStyles = {
     width: '120px',

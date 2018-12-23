@@ -1,6 +1,9 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 
+import "./style.css";
+import "@wordpress/components/build-style/style.css";
+
 // Options
 // Option defaults:
 addDecorator(

@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Placeholder } from '@wordpress/components';
-import "@wordpress/components/build-style/style.css";
 
 const PlaceholderStyles = {
   width: '90%',

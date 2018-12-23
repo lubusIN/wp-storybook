@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Panel } from '@wordpress/components';
-import "@wordpress/components/build-style/style.css";
 
 const PanelStyles = {
   width: '80%',
