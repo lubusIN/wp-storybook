@@ -22,11 +22,5 @@ storiesOf('ColorIndicator', module)
   .addDecorator(ColorIndicatorDecorator)
   .addDecorator(withReadme(ColorIndicatorReadme))
   .add('Basic', () => (
-    <React.Fragment>
       <ColorIndicator colorValue="#f00" />
-     <br/>
-     <br/>
-     <ColorIndicator colorValue="#333" />
-    </React.Fragment>
   ));
-
