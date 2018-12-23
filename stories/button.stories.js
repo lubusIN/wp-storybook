@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Button } from "@wordpress/components";
+import ButtonReadme from '@wordpress/components/src/button/README.md'
 
 const ButtonStyles = {
     marginTop: '10%',
@@ -19,6 +21,7 @@ const ButtonDecorator = (storyFn) => (
 
 storiesOf('Button', module)
   .addDecorator(ButtonDecorator)
+  .addDecorator(withReadme(ButtonReadme))
   .add('Basic', () => (<Button onClick={action('clicked')}>Click Me</Button>))
   .add('Href', () => <Button href="https://www.wordpress.org" onClick={action('clicked')}>Click Me</Button>)
   .add('Default', () => <Button isDefault onClick={action('clicked')}>Click Me</Button>)

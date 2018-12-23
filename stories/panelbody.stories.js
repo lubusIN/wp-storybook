@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { PanelBody } from '@wordpress/components';
+import PanelBodyReadme from '@wordpress/components/src/panel/README.md'
 
 const PanelBodyStyles = {
   width: '280px',
@@ -20,6 +22,7 @@ const PanelBodyDecorator = (storyFn) => (
 
 storiesOf('PanelBody', module)
   .addDecorator(PanelBodyDecorator)
+  .addDecorator(withReadme(PanelBodyReadme))
   .add('Basic', () => (
     <React.Fragment>
        <PanelBody

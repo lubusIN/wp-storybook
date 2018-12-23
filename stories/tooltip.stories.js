@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Tooltip, Button } from '@wordpress/components';
+import TooltipReadme from '@wordpress/components/src/tooltip/README.md'
 
 const TooltipStyles = {
   width: '180px',
@@ -20,6 +22,7 @@ const TooltipDecorator = (storyFn) => (
 
 storiesOf('Tooltip', module)
   .addDecorator( TooltipDecorator )
+  .addDecorator(withReadme(TooltipReadme))
   .add('Basic', () => (
     <Tooltip text="More information">
       <Button isDefault>

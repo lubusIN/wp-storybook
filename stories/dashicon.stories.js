@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Dashicon } from '@wordpress/components';
+import DashiconReadme from '@wordpress/components/src/dashicon/README.md'
 
 const DashiconStyles = {
   textAlign: 'center',
@@ -19,6 +21,7 @@ const DashiconDecorator = (storyFn) => (
 
 storiesOf('Dashicon', module)
   .addDecorator(DashiconDecorator)
+  .addDecorator(withReadme(DashiconReadme))
   .add('Basic', () => (
     <React.Fragment>
       <Dashicon icon="admin-home" />

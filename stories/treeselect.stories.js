@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { TreeSelect } from '@wordpress/components';
+import TreeSelectReadme from '@wordpress/components/src/button/README.md'
 
 const TreeSelectStyles = {
     width: '280px',
@@ -20,6 +22,7 @@ const TreeSelectDecorator = (storyFn) => (
 
 storiesOf('TreeSelect', module)
     .addDecorator( TreeSelectDecorator )
+    .addDecorator(withReadme(TreeSelectReadme))
     .add('Basic', () => (
         <TreeSelect
             label="Parent page"

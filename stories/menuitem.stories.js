@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { MenuItem } from '@wordpress/components';
+import MenuItemReadme from '@wordpress/components/src/menu-item/README.md'
 
 const MenuItemStyles = {
   width: '20%',
@@ -20,6 +22,7 @@ const MenuItemDecorator = (storyFn) => (
 
 storiesOf('MenuItem', module)
   .addDecorator(MenuItemDecorator)
+  .addDecorator(withReadme(MenuItemReadme))
   .add('Basic', () => (
     <React.Fragment>
       <MenuItem onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>

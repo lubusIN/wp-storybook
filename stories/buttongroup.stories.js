@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Button, ButtonGroup } from "@wordpress/components";
+import ButtonGroupReadme from '@wordpress/components/src/button-group/README.md'
 
 const ButtonGroupStyles = {
   marginTop: '10%',
@@ -19,6 +21,7 @@ const ButtonGroupDecorator = (storyFn) => (
 
 storiesOf('Button Group', module)
   .addDecorator(ButtonGroupDecorator)
+  .addDecorator(withReadme(ButtonGroupReadme))
   .add('Basic', () => (
     <React.Fragment>
       <ButtonGroup>

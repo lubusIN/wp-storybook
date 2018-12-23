@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { TabPanel } from '@wordpress/components';
+import TabPanelReadme from '@wordpress/components/src/tab-panel/README.md'
 
 const TabPanelStyles = {
     width: '280px',
@@ -20,6 +22,7 @@ const TabPanelDecorator = (storyFn) => (
   
 storiesOf('TabPanel', module)
     .addDecorator( TabPanelDecorator )
+    .addDecorator(withReadme(TabPanelReadme))
     .add('Basic', () => (
         <TabPanel className="my-tab-panel"
             activeClass="active-tab"

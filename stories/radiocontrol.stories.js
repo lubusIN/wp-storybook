@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { RadioControl } from '@wordpress/components';
+import RadioControlReadme from '@wordpress/components/src/radio-control/README.md'
 
 const RadioControlstyles = {
   width: '240px',
@@ -20,6 +22,7 @@ const RadioControlDecorator = (storyFn) => (
 
 storiesOf('RadioControl', module)
   .addDecorator(RadioControlDecorator)
+  .addDecorator(withReadme(RadioControlReadme))
   .add('Basic', () => (
     <React.Fragment>
      <RadioControl

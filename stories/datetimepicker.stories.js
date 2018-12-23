@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { DateTimePicker } from '@wordpress/components';
+import DateTimePickerReadme from '@wordpress/components/src/date-time/README.md'
 
 const DateTimePickerStyles = {
   width: '240px',
@@ -20,6 +22,7 @@ const DateTimePickerDecorator = (storyFn) => (
 
 storiesOf('DateTimePicker', module)
   .addDecorator(DateTimePickerDecorator)
+  .addDecorator(withReadme(DateTimePickerReadme))
   .add('Basic', () => (
     <DateTimePicker
       currentDate={ new Date() }

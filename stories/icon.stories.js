@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Icon } from '@wordpress/components';
+import IconReadme from '@wordpress/components/src/icon/README.md'
 
 const IconStyles = {
   width: '24px',
@@ -23,6 +25,7 @@ const MyIconComponent = () => <svg><path d="M5 4v3h5.5v12h3V7H19V4z" /></svg>;
 
 storiesOf('Icon', module)
   .addDecorator(IconDecorator)
+  .addDecorator(withReadme(IconReadme))
   .add('With Dashicon', () => (
     <Icon icon="screenoptions" />
   ))

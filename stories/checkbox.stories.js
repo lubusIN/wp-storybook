@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { CheckboxControl } from "@wordpress/components";
+import CheckboxControlReadme from '@wordpress/components/src/checkbox-control/README.md'
 
 const CheckboxControlStyles = {
   width: '200px',
@@ -20,6 +22,7 @@ const CheckboxControlDecorator = (storyFn) => (
 
 storiesOf('CheckboxControl', module)
   .addDecorator(CheckboxControlDecorator)
+  .addDecorator(withReadme(CheckboxControlReadme))
   .add('Basic', () => (
     <React.Fragment>
        <CheckboxControl

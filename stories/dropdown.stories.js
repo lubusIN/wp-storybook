@@ -3,8 +3,11 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
+
 
 import { Dropdown, Button } from '@wordpress/components';
+import DropdownReadme from '@wordpress/components/src/dropdown/README.md'
 
 const DropdownStyles = {
     textAlign: 'center',
@@ -20,6 +23,7 @@ const DropdownDecorator = (storyFn) => (
 
 storiesOf('Dropdown', module)  
     .addDecorator(DropdownDecorator)
+    .addDecorator(withReadme(DropdownReadme))
     .add('Basic', () => (
         <Dropdown
             className="my-container-class-name"

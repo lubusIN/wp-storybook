@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Placeholder } from '@wordpress/components';
+import PlaceholderReadme from '@wordpress/components/src/placeholder/README.md'
 
 const PlaceholderStyles = {
   width: '90%',
@@ -20,6 +22,7 @@ const PlaceholderDecorator = (storyFn) => (
 
 storiesOf('PlaceHolder', module)
   .addDecorator(PlaceholderDecorator)
+  .addDecorator(withReadme(PlaceholderReadme))
   .add('Basic', () => (
     <React.Fragment>
        <Placeholder

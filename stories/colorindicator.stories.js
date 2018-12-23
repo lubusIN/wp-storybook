@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { ColorIndicator } from '@wordpress/components';
+import ColorIndicatorReadme from '@wordpress/components/src/color-indicator/README.md'
 
 const ColorIndicatorStyles = {
   textAlign: 'center',
@@ -19,6 +20,7 @@ const ColorIndicatorDecorator = (storyFn) => (
 
 storiesOf('ColorIndicator', module)
   .addDecorator(ColorIndicatorDecorator)
+  .addDecorator(withReadme(ColorIndicatorReadme))
   .add('Basic', () => (
     <React.Fragment>
       <ColorIndicator colorValue="#f00" />

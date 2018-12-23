@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { Button, Popover } from '@wordpress/components';
+import PopoverReadme from '@wordpress/components/src/popover/README.md'
 
 const PopoverStyles = {
     width: '120px',
@@ -20,6 +22,7 @@ const PopoverDecorator = (storyFn) => (
 
 storiesOf('PopOver', module)
     .addDecorator(PopoverDecorator)
+    .addDecorator(withReadme(PopoverReadme))
     .add('Basic', () => (
         <React.Fragment>
             <Button isDefault onClick={ action('clicked') }>

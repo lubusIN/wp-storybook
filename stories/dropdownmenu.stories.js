@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { DropdownMenu } from '@wordpress/components';
+import DropdownMenuReadme from '@wordpress/components/src/dropdown-menu/README.md'
 
 const DropdownMenuStyles = {
     width: '50px',
@@ -20,6 +22,7 @@ const DropdownMenuDecorator = (storyFn) => (
 
 storiesOf('DropdownMenu', module)
     .addDecorator(DropdownMenuDecorator)
+    .addDecorator(withReadme(DropdownMenuReadme))
     .add('Basic', () => (
         <DropdownMenu
             icon="move"

@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { SelectControl } from '@wordpress/components';
+import SelectControlReadme from '@wordpress/components/src/select-control/README.md'
 
 const SelectControlStyles = {
   width: '280px',
@@ -20,6 +22,7 @@ const SelectControlDecorator = (storyFn) => (
 
 storiesOf('SelectControl', module)
   .addDecorator(SelectControlDecorator)
+  .addDecorator(withReadme(SelectControlReadme))
   .add('Basic', () => (
     <React.Fragment>
       <SelectControl

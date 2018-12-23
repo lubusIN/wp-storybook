@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { PanelRow, Button} from '@wordpress/components';
+import PanelRowReadme from '@wordpress/components/src/panel/README.md'
 
 const PanelRowStyles = {
   width: 'auto',
@@ -20,6 +22,7 @@ const PanelRowDecorator = (storyFn) => (
 
 storiesOf('PanelRow', module)
   .addDecorator(PanelRowDecorator)
+  .addDecorator(withReadme(PanelRowReadme))
   .add('Basic', () => (
     <React.Fragment>
       <PanelRow>

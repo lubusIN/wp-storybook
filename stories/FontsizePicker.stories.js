@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { FontSizePicker } from '@wordpress/components';
+import FontSizePickerReadme from '@wordpress/components/src/font-size-picker/README.md'
 
 const FontSizePickerStyles = {
   width: '240px',
@@ -20,6 +22,7 @@ const FontSizePickerDecorator = (storyFn) => (
 
 storiesOf('FontSizePicker', module)
   .addDecorator(FontSizePickerDecorator)
+  .addDecorator(withReadme(FontSizePickerReadme))
   .add('Basic', () => (
     <FontSizePicker
       fontSizes={ [

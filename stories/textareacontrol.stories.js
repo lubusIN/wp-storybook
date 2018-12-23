@@ -3,8 +3,10 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withReadme, withDocs } from 'storybook-readme';
 
 import { TextareaControl } from '@wordpress/components';
+import TextareaControlReadme from '@wordpress/components/src/textarea-control/README.md'
 
 const TextareaControlStyles = {
   width: '280px',
@@ -20,6 +22,7 @@ const TextareaControlDecorator = (storyFn) => (
 
 storiesOf('TextareaControl', module)
   .addDecorator(TextareaControlDecorator)
+  .addDecorator(withReadme(TextareaControlReadme))
   .add('Basic', () => (
     <TextareaControl
       label="Details"
