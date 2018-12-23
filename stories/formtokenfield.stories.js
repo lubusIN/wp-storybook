@@ -25,6 +25,7 @@ storiesOf('FormTokenField', module)
       value={ ['Asia'] } 
       suggestions={ [ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ] } 
       placeholder="Type a continent"
+      onChange={ action( 'Changed' ) }
     />
   ));
 

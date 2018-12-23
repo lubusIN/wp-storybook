@@ -28,6 +28,7 @@ storiesOf('ColorPalette', module)
           { name: 'blue', color: '#00f' }, 
         ] } 
         value={ '#fff' }
+        onChange={ action( 'Changed' ) }
       />
   ));
 

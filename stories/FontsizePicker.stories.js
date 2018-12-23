@@ -36,6 +36,7 @@ storiesOf('FontSizePicker', module)
       ] }
       value={ 12 }
       fallbackFontSize={ 16 }
+      onChange={ action( 'Changed' ) }
     />
   ));
 

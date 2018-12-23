@@ -1,8 +1,13 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
+import '@storybook/addon-console';
+import { withConsole } from '@storybook/addon-console';
 
 import "./style.css";
 import "@wordpress/components/build-style/style.css";
+
+// Console
+addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 // Options
 // Option defaults:

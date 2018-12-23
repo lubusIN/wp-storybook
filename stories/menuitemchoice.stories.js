@@ -33,8 +33,9 @@ storiesOf('MenuItemsChoice', module)
                     value: 'text',
                     label: 'Code Editor',
                 },
-            ] }
+              ] }
               value={ 'text' }
+              onSelect={ action( 'Selected' ) }
           />
       </MenuGroup>
     </React.Fragment>

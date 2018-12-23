@@ -22,17 +22,17 @@ storiesOf('Button Group', module)
   .add('Basic', () => (
     <React.Fragment>
       <ButtonGroup>
-          <Button isDefault>Left</Button>
-          <Button isPrimary>Right</Button>
+          <Button isDefault onClick={ action( 'Clicked' ) }>Left</Button>
+          <Button isPrimary onClick={ action( 'Clicked' ) }>Right</Button>
       </ButtonGroup>
       <br/>
       <br/>
       <ButtonGroup>
-          <Button isDefault>S</Button>
-          <Button isDefault>M</Button>
-          <Button isDefault>L</Button>
-          <Button isDefault>XL</Button>
-          <Button isPrimary>XXL</Button>
+          <Button isDefault onClick={ action( 'Clicked' ) }>S</Button>
+          <Button isDefault onClick={ action( 'Clicked' ) }>M</Button>
+          <Button isDefault onClick={ action( 'Clicked' ) }>L</Button>
+          <Button isDefault onClick={ action( 'Clicked' ) }>XL</Button>
+          <Button isPrimary onClick={ action( 'Clicked' ) }>XXL</Button>
       </ButtonGroup>
     </React.Fragment>
 

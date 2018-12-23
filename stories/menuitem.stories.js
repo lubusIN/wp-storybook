@@ -22,28 +22,28 @@ storiesOf('MenuItem', module)
   .addDecorator(MenuItemDecorator)
   .add('Basic', () => (
     <React.Fragment>
-      <MenuItem> Item 1 </MenuItem>
-      <MenuItem> Item 2 </MenuItem>
-      <MenuItem> Item 3 </MenuItem>
-      <MenuItem> Item 4 </MenuItem>
-      <MenuItem> Item 5 </MenuItem>
+      <MenuItem onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
+      <MenuItem onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
+      <MenuItem onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
+      <MenuItem onClick={ action( 'Clicked' ) }> Item 4 </MenuItem>
+      <MenuItem onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
     </React.Fragment>
   ))
   .add('with Icon', () => (
     <React.Fragment>
-      <MenuItem icon="yes" > Item 1 </MenuItem>
-      <MenuItem icon="yes"> Item 2 </MenuItem>
-      <MenuItem icon="yes"> Item 3 </MenuItem>
-      <MenuItem icon="no"> Item 4 </MenuItem>
-      <MenuItem icon="yes"> Item 5 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
+      <MenuItem icon="no" onClick={ action( 'Clicked' ) }> Item 4 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
     </React.Fragment>
   ))
   .add('with Selected', () => (
     <React.Fragment>
-      <MenuItem icon="yes" > Item 1 </MenuItem>
-      <MenuItem icon="yes"> Item 2 </MenuItem>
-      <MenuItem icon="yes"> Item 3 </MenuItem>
-      <MenuItem icon="no" isSelected={ true }> Item 4 </MenuItem>
-      <MenuItem icon="yes"> Item 5 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
+      <MenuItem icon="no"  onClick={ action( 'Clicked' ) } isSelected={ true }> Item 4 </MenuItem>
+      <MenuItem icon="yes" onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
     </React.Fragment>
   ));

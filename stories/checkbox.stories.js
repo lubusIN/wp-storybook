@@ -27,7 +27,8 @@ storiesOf('CheckboxControl', module)
         label="Is author"
         help="Is the user a author or not?"
         checked={ true }
-      />
+        onChange={ action( 'Changed' ) }
+      / >
      <br/>
      <br/>
      <CheckboxControl
@@ -35,6 +36,8 @@ storiesOf('CheckboxControl', module)
         label="Is author"
         help="Is the user a author or not?"
         checked={ false }
+        onChange={ action( 'Changed' ) }
+
       />
     </React.Fragment>
   ));

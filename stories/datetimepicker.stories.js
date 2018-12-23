@@ -23,12 +23,14 @@ storiesOf('DateTimePicker', module)
   .add('Basic', () => (
     <DateTimePicker
       currentDate={ new Date() }
+      onChange={ action( 'Changed' ) }
     />
   ))
   .add('12Hrs', () => (
     <DateTimePicker
       currentDate={ new Date() }
       is12Hour={ true }
+      onChange={ action( 'Changed' ) }
     />
   ));
 

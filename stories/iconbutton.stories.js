@@ -25,6 +25,7 @@ storiesOf('IconButton', module)
       <IconButton
           icon="ellipsis"
           label="More"
+          onClick={ action( 'Clicked' ) }
       />
 
       <br />
@@ -32,6 +33,7 @@ storiesOf('IconButton', module)
       <IconButton
           icon="admin-appearance"
           label="Styles"
+          onClick={ action( 'Clicked' ) }
       />
     </React.Fragment>
   ));

@@ -26,7 +26,7 @@ storiesOf('Button', module)
   .add('Large', () => <Button isLarge onClick={action('clicked')}>Click Me</Button>)
   .add('Small', () => <Button isSmall onClick={action('clicked')}>Click Me</Button>)
   .add('Toggled', () => <Button isToggled onClick={action('clicked')}>Click Me</Button>)
-  .add('Busy', () => <Button isBusy onClick={action('clicked')}>Click Me</Button>)
+  .add('Busy', () => <Button isPrimary isBusy onClick={action('clicked')}>Click Me</Button>)
   .add('Link', () => <Button isLink onClick={action('clicked')}>Click Me</Button>)
   .add('Focus', () => <Button focus onClick={action('clicked')}>Click Me</Button>);
 

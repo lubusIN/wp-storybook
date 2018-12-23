@@ -24,12 +24,14 @@ storiesOf('ColorPicker', module)
   .add('Basic', () => (
     <ColorPicker
       color={ '#f00' }
+      onChangeComplete={ action( 'Changed' ) }
     />
   ))
   .add('DisableAlpha', () => (
     <ColorPicker
       color={ '#f00' }
       disableAlpha
+      onChangeComplete={ action( 'Changed' ) }
     />
   ));
 

@@ -25,11 +25,13 @@ storiesOf('FormToggle', module)
     <React.Fragment>
       <FormToggle 
           checked={ true }
+          onChange={ action( 'Changed' ) }
       />
       <br />
       <br />
       <FormToggle 
           checked={ false }
+          onChange={ action( 'Changed' ) }
       />
   </React.Fragment>
 ));

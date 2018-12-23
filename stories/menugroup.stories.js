@@ -23,12 +23,12 @@ storiesOf('MenuGroup', module)
   .add('Basic', () => (
     <React.Fragment>
       <MenuGroup label="Settings MenuGroup">
-        <MenuItem>Setting 1</MenuItem>
-        <MenuItem>Setting 2</MenuItem>
+        <MenuItem onClick={ action( 'Clicked' ) } >Setting 1</MenuItem>
+        <MenuItem onClick={ action( 'Clicked' ) } >Setting 2</MenuItem>
       </MenuGroup>
       <MenuGroup label="Options MenuGroup">
-        <MenuItem>Option 1</MenuItem>
-        <MenuItem>Option 2</MenuItem>
+        <MenuItem onClick={ action( 'Clicked' ) } >Option 1</MenuItem>
+        <MenuItem onClick={ action( 'Clicked' ) } >Option 2</MenuItem>
       </MenuGroup>
     </React.Fragment>
   ));
