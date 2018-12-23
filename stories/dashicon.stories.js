@@ -23,14 +23,6 @@ storiesOf('Dashicon', module)
   .addDecorator(DashiconDecorator)
   .addDecorator(withReadme(DashiconReadme))
   .add('Basic', () => (
-    <React.Fragment>
-      <Dashicon icon="admin-home" />
-      <br/>
-      <br/>
-      <Dashicon icon="products" />
-      <br/>
-      <br/>
-      <Dashicon icon="wordpress" />
-    </React.Fragment>
+    <Dashicon icon="wordpress" />
   ));
 
