@@ -4,26 +4,27 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { PanelBody, PanelRow } from '@wordpress/components';
+import { PanelBody } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const PanelBodyStyles = {
+  width: '280px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const PanelBodyDecorator = (storyFn) => (
+  <div style={PanelBodyStyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('PanelBody', module)
+  .addDecorator(PanelBodyDecorator)
   .add('Basic', () => (
     <React.Fragment>
        <PanelBody
-            title="My Block Settings"
+            title="My Block s Settings"
             initialOpen={ true }
         >
           My Panel Inputs and Labels

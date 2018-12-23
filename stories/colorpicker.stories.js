@@ -7,22 +7,21 @@ import { linkTo } from '@storybook/addon-links';
 import { ColorPicker } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const ColorPickerStyles = {
     textAlign: 'center',
-    width: '40%',
-    height: '40%',
+    width: '300px',
     margin: 'auto',
+    marginTop: '10%'
   };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const ColorPickerDecorator = (storyFn) => (
+  <div style={ColorPickerStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('ColorPicker', module)
+  .addDecorator(ColorPickerDecorator)
   .add('Basic', () => (
     <ColorPicker
       color={ '#f00' }

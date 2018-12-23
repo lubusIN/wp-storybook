@@ -7,17 +7,19 @@ import { linkTo } from '@storybook/addon-links';
 import { Button } from "@wordpress/components";
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-  };
-  const CenterDecorator = (storyFn) => (
-    <div style={styles}>
-      { storyFn() }
-    </div>
-  );
-addDecorator(CenterDecorator);
+const ButtonStyles = {
+    marginTop: '10%',
+    textAlign: 'center'
+};
+
+const ButtonDecorator = (storyFn) => (
+  <div style={ButtonStyles}>
+    { storyFn() }
+  </div>
+);
 
 storiesOf('Button', module)
+  .addDecorator(ButtonDecorator)
   .add('Basic', () => (<Button onClick={action('clicked')}>Click Me</Button>))
   .add('Href', () => <Button href="https://www.wordpress.org" onClick={action('clicked')}>Click Me</Button>)
   .add('Default', () => <Button isDefault onClick={action('clicked')}>Click Me</Button>)

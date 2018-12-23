@@ -7,20 +7,18 @@ import { linkTo } from '@storybook/addon-links';
 import { Notice } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-  textAlign: 'center',
-  margin: 'auto',
+const NoticeStyles = {
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const NoticeDecorator = (storyFn) => (
+  <div style={NoticeStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('Notice', module)
+  .addDecorator(NoticeDecorator)
   .add('Basic', () => (
     <React.Fragment>
         <Notice status="error">

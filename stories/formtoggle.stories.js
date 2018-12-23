@@ -7,19 +7,21 @@ import { linkTo } from '@storybook/addon-links';
 import { FormToggle } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const FormToggleStyles = {
+  width: '100px',
   margin: 'auto',
+  marginTop: '10%',
+  textAlign: 'center'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const FormToggleDecorator = (storyFn) => (
+  <div style={FormToggleStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('FormToggle', module)
+  .addDecorator(FormToggleDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <FormToggle 

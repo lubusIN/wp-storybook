@@ -7,7 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { TextControl } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
+const TextControlStyles = {
+  width: '280px',
+  margin: 'auto',
+  marginTop: '10%'
+};
+
+const TextControlDecorator = (storyFn) => (
+  <div style={TextControlStyles}>
+      { storyFn() }
+  </div>
+);
+
 storiesOf('TextControl', module)
+  .addDecorator( TextControlDecorator )
   .add('Basic', () => (
     <TextControl
       label="Additional CSS Class"

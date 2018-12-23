@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { CheckboxControl } from "@wordpress/components";
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-  };
+const CheckboxControlStyles = {
+  width: '200px',
+  margin: 'auto',
+  marginTop: '10%',
+};
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const CheckboxControlDecorator = (storyFn) => (
+  <div style={CheckboxControlStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('CheckboxControl', module)
+  .addDecorator(CheckboxControlDecorator)
   .add('Basic', () => (
     <React.Fragment>
        <CheckboxControl
@@ -37,6 +38,5 @@ storiesOf('CheckboxControl', module)
         checked={ false }
       />
     </React.Fragment>
-
   ));
 

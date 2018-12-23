@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { RadioControl } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const RadioControlstyles = {
+  width: '240px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const RadioControlDecorator = (storyFn) => (
+  <div style={RadioControlstyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('RadioControl', module)
+  .addDecorator(RadioControlDecorator)
   .add('Basic', () => (
     <React.Fragment>
      <RadioControl

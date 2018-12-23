@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { Placeholder } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const PlaceholderStyles = {
+  width: '90%',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const PlaceholderDecorator = (storyFn) => (
+  <div style={PlaceholderStyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('PlaceHolder', module)
+  .addDecorator(PlaceholderDecorator)
   .add('Basic', () => (
     <React.Fragment>
        <Placeholder

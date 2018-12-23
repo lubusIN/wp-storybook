@@ -7,20 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { IconButton } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-  textAlign: 'center',
+const IconButtonStyles = {
+  width: '24px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const IconButtonDecorator = (storyFn) => (
+  <div style={IconButtonStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('IconButton', module)
+  .addDecorator(IconButtonDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <IconButton
@@ -35,5 +35,5 @@ storiesOf('IconButton', module)
           label="Styles"
       />
     </React.Fragment>
-));
+  ));
 

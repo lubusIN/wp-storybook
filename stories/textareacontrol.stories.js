@@ -7,7 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { TextareaControl } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
+const TextareaControlStyles = {
+  width: '280px',
+  margin: 'auto',
+  marginTop: '10%'
+};
+
+const TextareaControlDecorator = (storyFn) => (
+  <div style={TextareaControlStyles}>
+      { storyFn() }
+  </div>
+);
+
 storiesOf('TextareaControl', module)
+  .addDecorator(TextareaControlDecorator)
   .add('Basic', () => (
     <TextareaControl
       label="Details"

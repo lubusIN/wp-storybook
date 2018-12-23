@@ -7,22 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { ColorPalette } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-    width: '40%',
-    height: '40%',
-    margin: 'auto',
-  };
+const ColorPaletteStyles = {
+  width: '220px',
+  margin: 'auto',
+  marginTop: '10%',
+};
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const ColorPaletteDecorator = (storyFn) => (
+  <div style={ColorPaletteStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('ColorPalette', module)
+  .addDecorator(ColorPaletteDecorator)
   .add('Basic', () => (
       <ColorPalette
         colors={ [ 
@@ -30,7 +28,7 @@ storiesOf('ColorPalette', module)
           { name: 'white', color: '#fff' }, 
           { name: 'blue', color: '#00f' }, 
         ] } 
-        value={ '#f00' }
+        value={ '#fff' }
       />
   ));
 

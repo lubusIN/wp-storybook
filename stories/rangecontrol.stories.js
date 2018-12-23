@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { RangeControl } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const RangeControlStyles = {
+  width: '280px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const RangeControlDecorator = (storyFn) => (
+  <div style={RangeControlStyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('RangeControl', module)
+  .addDecorator(RangeControlDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <RangeControl

@@ -7,17 +7,19 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, ButtonGroup } from "@wordpress/components";
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-  };
-  const CenterDecorator = (storyFn) => (
-    <div style={styles}>
-      { storyFn() }
-    </div>
-  );
-addDecorator(CenterDecorator);
+const ButtonGroupStyles = {
+  marginTop: '10%',
+  textAlign: 'center',
+};
+  
+const ButtonGroupDecorator = (storyFn) => (
+  <div style={ButtonGroupStyles}>
+    { storyFn() }
+  </div>
+);
 
 storiesOf('Button Group', module)
+  .addDecorator(ButtonGroupDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <ButtonGroup>

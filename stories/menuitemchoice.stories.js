@@ -7,21 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { MenuGroup, MenuItemsChoice } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-  textAlign: 'center',
-  width: '20%',
+const MenuItemsChoiceStyles = {
+  width: '240px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const MenuItemsChoiceDecorator = (storyFn) => (
+  <div style={MenuItemsChoiceStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('MenuItemsChoice', module)
+  .addDecorator(MenuItemsChoiceDecorator)
   .add('Basic', () => (
     <React.Fragment>
        <MenuGroup label="Editor">
@@ -41,4 +40,3 @@ storiesOf('MenuItemsChoice', module)
       </MenuGroup>
     </React.Fragment>
   ));
-

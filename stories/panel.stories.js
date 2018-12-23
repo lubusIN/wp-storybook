@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { Panel } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const PanelStyles = {
+  width: '80%',
   margin: 'auto',
+  marginTop: '10%',
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const PanelDecorator = (storyFn) => (
+  <div style={PanelStyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('Panel', module)
+  .addDecorator(PanelDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <Panel header="My Panel">

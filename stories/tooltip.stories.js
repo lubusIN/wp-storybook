@@ -7,7 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { Tooltip, Button } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
+const TooltipStyles = {
+  width: '180px',
+  margin: 'auto',
+  marginTop: '10%'
+};
+
+const TooltipDecorator = (storyFn) => (
+  <div style={TooltipStyles}>
+      { storyFn() }
+  </div>
+);
+
 storiesOf('Tooltip', module)
+  .addDecorator( TooltipDecorator )
   .add('Basic', () => (
     <Tooltip text="More information">
       <Button isDefault>

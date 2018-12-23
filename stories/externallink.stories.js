@@ -7,20 +7,19 @@ import { linkTo } from '@storybook/addon-links';
 import { ExternalLink } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-    margin: 'auto',
-  };
+const ExternalLinkStyles = {
+  textAlign: 'center',
+  marginTop: '10%'
+};
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const ExternalLinkDecorator = (storyFn) => (
+  <div style={ExternalLinkStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('ExternalLink', module)
+  .addDecorator(ExternalLinkDecorator)
   .add('Basic', () => (
     <ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
 ));

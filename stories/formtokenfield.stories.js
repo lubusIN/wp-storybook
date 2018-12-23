@@ -7,24 +7,25 @@ import { linkTo } from '@storybook/addon-links';
 import { FormTokenField } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const FormTokenFieldStyles = {
+  width: '400px',
   margin: 'auto',
+  marginTop: '10%',
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const FormTokenFieldDecorator = (storyFn) => (
+  <div style={FormTokenFieldStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('FormTokenField', module)
+  .addDecorator(FormTokenFieldDecorator)
   .add('Basic', () => (
     <FormTokenField 
       value={ ['Asia'] } 
       suggestions={ [ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ] } 
       placeholder="Type a continent"
     />
-));
+  ));
 

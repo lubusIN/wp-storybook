@@ -7,19 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { SelectControl } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
+const SelectControlStyles = {
+  width: '280px',
   margin: 'auto',
+  marginTop: '10%'
 };
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const SelectControlDecorator = (storyFn) => (
+  <div style={SelectControlStyles}>
     { storyFn() }
   </div>
 );
 
-//addDecorator(CenterDecorator);
-
 storiesOf('SelectControl', module)
+  .addDecorator(SelectControlDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <SelectControl
@@ -46,6 +47,6 @@ storiesOf('SelectControl', module)
         ] }
         onChange={ action( 'Changed' ) }
         help="Select font size"
-    />
+      />
     </React.Fragment>
   ));

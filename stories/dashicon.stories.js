@@ -7,17 +7,19 @@ import { linkTo } from '@storybook/addon-links';
 import { Dashicon } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-  };
-  const CenterDecorator = (storyFn) => (
-    <div style={styles}>
-      { storyFn() }
-    </div>
-  );
-addDecorator(CenterDecorator);
+const DashiconStyles = {
+  textAlign: 'center',
+  marginTop: '10%'
+};
+
+const DashiconDecorator = (storyFn) => (
+  <div style={DashiconStyles}>
+    { storyFn() }
+  </div>
+);
 
 storiesOf('Dashicon', module)
+  .addDecorator(DashiconDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <Dashicon icon="admin-home" />
@@ -28,6 +30,5 @@ storiesOf('Dashicon', module)
       <br/>
       <Dashicon icon="wordpress" />
     </React.Fragment>
-
   ));
 

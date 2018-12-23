@@ -7,19 +7,19 @@ import { linkTo } from '@storybook/addon-links';
 import { ColorIndicator } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-  };
+const ColorIndicatorStyles = {
+  textAlign: 'center',
+  marginTop: '10%'
+};
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const ColorIndicatorDecorator = (storyFn) => (
+  <div style={ColorIndicatorStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('ColorIndicator', module)
+  .addDecorator(ColorIndicatorDecorator)
   .add('Basic', () => (
     <React.Fragment>
       <ColorIndicator colorValue="#f00" />
@@ -27,6 +27,5 @@ storiesOf('ColorIndicator', module)
      <br/>
      <ColorIndicator colorValue="#333" />
     </React.Fragment>
-
   ));
 

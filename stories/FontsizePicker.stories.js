@@ -7,21 +7,20 @@ import { linkTo } from '@storybook/addon-links';
 import { FontSizePicker } from '@wordpress/components';
 import "@wordpress/components/build-style/style.css";
 
-const styles = {
-    textAlign: 'center',
-    width: '200px',
-    margin: 'auto',
-  };
+const FontSizePickerStyles = {
+  width: '240px',
+  margin: 'auto',
+  marginTop: '10%',
+};
 
-const CenterDecorator = (storyFn) => (
-  <div style={styles}>
+const FontSizePickerDecorator = (storyFn) => (
+  <div style={FontSizePickerStyles}>
     { storyFn() }
   </div>
 );
 
-addDecorator(CenterDecorator);
-
 storiesOf('FontSizePicker', module)
+  .addDecorator(FontSizePickerDecorator)
   .add('Basic', () => (
     <FontSizePicker
       fontSizes={ [
@@ -39,5 +38,5 @@ storiesOf('FontSizePicker', module)
       value={ 12 }
       fallbackFontSize={ 16 }
     />
-));
+  ));
 
