@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { ColorPalette } from '@wordpress/components';
 import ColorPaletteReadme from '@wordpress/components/src/color-palette/README.md'
 
-const ColorPaletteStyles = {
-  width: '220px',
-  margin: 'auto',
-  marginTop: '10%',
-};
-
-const ColorPaletteDecorator = (storyFn) => (
-  <div style={ColorPaletteStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('ColorPalette', module)
-  .addDecorator(ColorPaletteDecorator)
+storiesOf('Components|ColorPalette', module)
   .addDecorator(withReadme(ColorPaletteReadme))
   .add('Basic', () => (
       <ColorPalette

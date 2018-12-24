@@ -8,18 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { Notice } from '@wordpress/components';
 import NoticeReadme from '@wordpress/components/src/notice/README.md'
 
-const NoticeStyles = {
-  marginTop: '10%'
-};
-
-const NoticeDecorator = (storyFn) => (
-  <div style={NoticeStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('Notice', module)
-  .addDecorator(NoticeDecorator)
+storiesOf('Components|Notice', module)
   .addDecorator(withReadme(NoticeReadme))
   .add('Basic', () => (
     <React.Fragment>

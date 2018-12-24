@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { DateTimePicker } from '@wordpress/components';
 import DateTimePickerReadme from '@wordpress/components/src/date-time/README.md'
 
-const DateTimePickerStyles = {
-  width: '240px',
-  margin: 'auto',
-  marginTop: '5%'
-};
-
-const DateTimePickerDecorator = (storyFn) => (
-  <div style={DateTimePickerStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('DateTimePicker', module)
-  .addDecorator(DateTimePickerDecorator)
+storiesOf('Components|DateTimePicker', module)
   .addDecorator(withReadme(DateTimePickerReadme))
   .add('Basic', () => (
     <DateTimePicker

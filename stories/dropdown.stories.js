@@ -5,24 +5,10 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
-
 import { Dropdown, Button } from '@wordpress/components';
 import DropdownReadme from '@wordpress/components/src/dropdown/README.md'
 
-const DropdownStyles = {
-    textAlign: 'center',
-    margin: 'auto',
-    marginTop: '10%'
-};
-
-const DropdownDecorator = (storyFn) => (
-  <div style={DropdownStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('Dropdown', module)  
-    .addDecorator(DropdownDecorator)
+storiesOf('Components|Dropdown', module)  
     .addDecorator(withReadme(DropdownReadme))
     .add('Basic', () => (
         <Dropdown

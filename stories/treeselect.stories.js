@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { TreeSelect } from '@wordpress/components';
 import TreeSelectReadme from '@wordpress/components/src/button/README.md'
 
-const TreeSelectStyles = {
-    width: '280px',
-    margin: 'auto',
-    marginTop: '10%'
-};
-  
-const TreeSelectDecorator = (storyFn) => (
-    <div style={TreeSelectStyles}>
-        { storyFn() }
-    </div>
-);
-
-storiesOf('TreeSelect', module)
-    .addDecorator( TreeSelectDecorator )
+storiesOf('Components|TreeSelect', module)
     .addDecorator(withReadme(TreeSelectReadme))
     .add('Basic', () => (
         <TreeSelect

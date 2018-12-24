@@ -8,23 +8,9 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { RadioControl } from '@wordpress/components';
 import RadioControlReadme from '@wordpress/components/src/radio-control/README.md'
 
-const RadioControlstyles = {
-  width: '240px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const RadioControlDecorator = (storyFn) => (
-  <div style={RadioControlstyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('RadioControl', module)
-  .addDecorator(RadioControlDecorator)
+storiesOf('Components|RadioControl', module)
   .addDecorator(withReadme(RadioControlReadme))
   .add('Basic', () => (
-    <React.Fragment>
      <RadioControl
         label="User type"
         help="The type of the current user"
@@ -37,5 +23,4 @@ storiesOf('RadioControl', module)
         ] }
         onChange={ action( 'changed' ) }
     />
-    </React.Fragment>
   ));

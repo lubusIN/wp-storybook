@@ -8,24 +8,10 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { Button, Popover } from '@wordpress/components';
 import PopoverReadme from '@wordpress/components/src/popover/README.md'
 
-const PopoverStyles = {
-    width: '120px',
-    margin: 'auto',
-    marginTop: '2%'
-};
-
-const PopoverDecorator = (storyFn) => (
-  <div style={PopoverStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('PopOver', module)
-    .addDecorator(PopoverDecorator)
+storiesOf('Components|Popover', module)
     .addDecorator(withReadme(PopoverReadme))
     .add('Basic', () => (
-        <React.Fragment>
-            <Button isDefault onClick={ action('clicked') }>
+        <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
                 <Popover>
@@ -33,11 +19,22 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-        </React.Fragment>
     ))
-    .add('With Position', () => (
-        <React.Fragment>
-            <Button isDefault onClick={ action('clicked') }>
+    .add('No Arrow', () => (
+        <Button isDefault onClick={ action('clicked') }>
+            Toggle Popover!
+            { true && (
+                <Popover noArrow>
+                    Popover is toggled!
+                </Popover>
+            ) }
+        </Button>
+    ));
+
+storiesOf('Components|Popover/Position', module)
+    .addDecorator(withReadme(PopoverReadme))
+    .add('Middle Right', () => (
+        <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
                 <Popover position="middle right">
@@ -45,10 +42,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-
+    ))
+    .add('Middle Left', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -57,10 +52,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-
+    ))
+    .add('Middle Center', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -69,12 +62,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-
+    ))
+    .add('Top Left', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -83,12 +72,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-
+    ))
+    .add('Top Right', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -97,12 +82,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-
+    ))
+    .add('Top Center', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -111,10 +92,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-
+    ))
+    .add('Bottom Left', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -123,12 +102,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-
+    ))
+    .add('Bottom Right', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -137,14 +112,8 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
+    ))
+    .add('Bottom Center', () => (
         <Button isDefault onClick={ action('clicked') }>
             Toggle Popover!
             { true && (
@@ -153,17 +122,4 @@ storiesOf('PopOver', module)
                 </Popover>
             ) }
         </Button>
-        </React.Fragment>
-    ))
-    .add('No Arrow', () => (
-        <React.Fragment>
-            <Button isDefault onClick={ action('clicked') }>
-            Toggle Popover!
-            { true && (
-                <Popover noArrow>
-                    Popover is toggled!
-                </Popover>
-            ) }
-        </Button>
-        </React.Fragment>
     ));

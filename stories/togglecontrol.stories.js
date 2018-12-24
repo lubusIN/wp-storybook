@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { ToggleControl } from '@wordpress/components';
 import ToggleControlReadme from '@wordpress/components/src/toggle-control/README.md'
 
-const ToggleControlStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const ToggleControlDecorator = (storyFn) => (
-  <div style={ToggleControlStyles}>
-      { storyFn() }
-  </div>
-);
-
-storiesOf('ToggleControl', module)
-  .addDecorator( ToggleControlDecorator )
+storiesOf('Components|ToggleControl', module)
   .addDecorator(withReadme(ToggleControlReadme))
   .add('Basic', () => (
     <ToggleControl

@@ -1,12 +1,14 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { withConsole } from '@storybook/addon-console';
+import centered from '@storybook/addon-centered';
 
 import "./style.css";
 import "@wordpress/components/build-style/style.css";
 
 // Console
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
+addDecorator(centered);
 
 // Options
 // Option defaults:
@@ -61,7 +63,7 @@ addDecorator(
      *   /\/|\./ - split by `/` or `.`
      * @type {Regex}
      */
-    hierarchySeparator: null,
+    hierarchySeparator: /\/|\./,
     /**
      * regex for finding the hierarchy root separator
      * @example:
@@ -69,7 +71,7 @@ addDecorator(
      *   /\|/ - split by `|`
      * @type {Regex}
      */
-    hierarchyRootSeparator: null,
+    hierarchyRootSeparator: /\|/,
     /**
      * sidebar tree animations
      * @type {Boolean}

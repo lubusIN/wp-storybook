@@ -8,81 +8,58 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { RangeControl } from '@wordpress/components';
 import RangeControlReadme from '@wordpress/components/src/range-control/README.md'
 
-const RangeControlStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const RangeControlDecorator = (storyFn) => (
-  <div style={RangeControlStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('RangeControl', module)
-  .addDecorator(RangeControlDecorator)
+storiesOf('Components|RangeControl', module)
   .addDecorator(withReadme(RangeControlReadme))
   .add('Basic', () => (
-    <React.Fragment>
-      <RangeControl
-          label="Columns"
-          value={ 6 }
-          onChange={ action( 'changed' ) }
-          min={ 2 }
-          max={ 10 }
-      />
-    </React.Fragment>
+    <RangeControl
+        label="Columns"
+        value={ 6 }
+        onChange={ action( 'changed' ) }
+        min={ 2 }
+        max={ 10 }
+    />
   ))
   .add('With Help', () => (
-    <React.Fragment>
-      <RangeControl
-          label="Columns"
-          help="Number of columns"
-          value={ 6 }
-          onChange={ action( 'changed' ) }
-          min={ 2 }
-          max={ 10 }
-      />
-    </React.Fragment>
+    <RangeControl
+        label="Columns"
+        help="Number of columns"
+        value={ 6 }
+        onChange={ action( 'changed' ) }
+        min={ 2 }
+        max={ 10 }
+    />
   ))
   .add('With Before Icon', () => (
-    <React.Fragment>
-      <RangeControl
-          label="Columns"
-          help="Number of columns"
-          beforeIcon="layout"
-          value={ 6 }
-          onChange={ action( 'changed' ) }
-          min={ 2 }
-          max={ 10 }
-      />
-    </React.Fragment>
+    <RangeControl
+        label="Columns"
+        help="Number of columns"
+        beforeIcon="layout"
+        value={ 6 }
+        onChange={ action( 'changed' ) }
+        min={ 2 }
+        max={ 10 }
+    />
   ))
   .add('With After Icon', () => (
-    <React.Fragment>
-      <RangeControl
-          label="Columns"
-          help="Number of columns"
-          afterIcon="layout"
-          value={ 6 }
-          onChange={ action( 'changed' ) }
-          min={ 2 }
-          max={ 10 }
-      />
-    </React.Fragment>
+    <RangeControl
+        label="Columns"
+        help="Number of columns"
+        afterIcon="layout"
+        value={ 6 }
+        onChange={ action( 'changed' ) }
+        min={ 2 }
+        max={ 10 }
+    />
   ))
   .add('With Reset', () => (
-    <React.Fragment>
-      <RangeControl
-          label="Columns"
-          help="Number of columns"
-          afterIcon="layout"
-          value={ 6 }
-          onChange={ action( 'changed' ) }
-          min={ 2 }
-          max={ 10 }
-          allowReset={ true }
-      />
-    </React.Fragment>
+    <RangeControl
+        label="Columns"
+        help="Number of columns"
+        afterIcon="layout"
+        value={ 6 }
+        onChange={ action( 'changed' ) }
+        min={ 2 }
+        max={ 10 }
+        allowReset={ true }
+    />
   ));

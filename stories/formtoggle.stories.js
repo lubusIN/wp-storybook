@@ -8,34 +8,18 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { FormToggle } from '@wordpress/components';
 import FormToggleReadme from '@wordpress/components/src/form-toggle/README.md'
 
-const FormToggleStyles = {
-  width: '100px',
-  margin: 'auto',
-  marginTop: '10%',
-  textAlign: 'center'
-};
-
-const FormToggleDecorator = (storyFn) => (
-  <div style={FormToggleStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('FormToggle', module)
-  .addDecorator(FormToggleDecorator)
+storiesOf('Components|FormToggle', module)
   .addDecorator(withReadme(FormToggleReadme))
-  .add('Basic', () => (
-    <React.Fragment>
-      <FormToggle 
-          checked={ true }
-          onChange={ action( 'Changed' ) }
-      />
-      <br />
-      <br />
-      <FormToggle 
-          checked={ false }
-          onChange={ action( 'Changed' ) }
-      />
-  </React.Fragment>
-));
+  .add('Basic', () => ( 
+    <FormToggle 
+        checked={ false }
+        onChange={ action( 'Changed' ) }
+    />
+  ))
+  .add('Checked', () => ( 
+    <FormToggle 
+      checked={ true }
+      onChange={ action( 'Changed' ) }
+    />
+  ));
 

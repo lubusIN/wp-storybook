@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { TextControl } from '@wordpress/components';
 import TextControlReadme from '@wordpress/components/src/text-control/README.md'
 
-const TextControlStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const TextControlDecorator = (storyFn) => (
-  <div style={TextControlStyles}>
-      { storyFn() }
-  </div>
-);
-
-storiesOf('TextControl', module)
-  .addDecorator( TextControlDecorator )
+storiesOf('Components|TextControl', module)
   .addDecorator(withReadme(TextControlReadme))
   .add('Basic', () => (
     <TextControl

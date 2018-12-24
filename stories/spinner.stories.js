@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { Spinner } from '@wordpress/components';
 import SpinnerReadme from '@wordpress/components/src/spinner/README.md'
 
-const SpinnerStyles = {
-  width: '24px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const SpinnerDecorator = (storyFn) => (
-  <div style={SpinnerStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('Spinner', module)
-  .addDecorator( SpinnerDecorator )
+storiesOf('Components|Spinner', module)
   .addDecorator(withReadme(SpinnerReadme))
   .add('Basic', () => (
     <Spinner />

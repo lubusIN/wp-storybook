@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { MenuGroup, MenuItem } from '@wordpress/components';
 import MenuGroupReadme from '@wordpress/components/src/menu-group/README.md'
 
-const MenuGroupStyles = {
-  width: '20%',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const MenuGroupDecorator = (storyFn) => (
-  <div style={MenuGroupStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('MenuGroup', module)
-  .addDecorator(MenuGroupDecorator)
+storiesOf('Components|MenuGroup', module)
   .addDecorator(withReadme(MenuGroupReadme))
   .add('Basic', () => (
     <React.Fragment>

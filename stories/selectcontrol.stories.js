@@ -8,47 +8,30 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { SelectControl } from '@wordpress/components';
 import SelectControlReadme from '@wordpress/components/src/select-control/README.md'
 
-const SelectControlStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const SelectControlDecorator = (storyFn) => (
-  <div style={SelectControlStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('SelectControl', module)
-  .addDecorator(SelectControlDecorator)
+storiesOf('Components|SelectControl', module)
   .addDecorator(withReadme(SelectControlReadme))
   .add('Basic', () => (
-    <React.Fragment>
-      <SelectControl
-        label="Size"
-        value={ "50%" }
-        options={ [
-            { label: 'Big', value: '100%' },
-            { label: 'Medium', value: '50%' },
-            { label: 'Small', value: '25%' },
-        ] }
-        onChange={ action( 'Changed' ) }
+    <SelectControl
+      label="Size"
+      value={ "50%" }
+      options={ [
+          { label: 'Big', value: '100%' },
+          { label: 'Medium', value: '50%' },
+          { label: 'Small', value: '25%' },
+      ] }
+      onChange={ action( 'Changed' ) }
     />
-    </React.Fragment>
   ))
   .add('With Help', () => (
-    <React.Fragment>
-      <SelectControl
-        label="Size"
-        value={ "50%" }
-        options={ [
-            { label: 'Big', value: '100%' },
-            { label: 'Medium', value: '50%' },
-            { label: 'Small', value: '25%' },
-        ] }
-        onChange={ action( 'Changed' ) }
-        help="Select font size"
-      />
-    </React.Fragment>
+    <SelectControl
+      label="Size"
+      value={ "50%" }
+      options={ [
+          { label: 'Big', value: '100%' },
+          { label: 'Medium', value: '50%' },
+          { label: 'Small', value: '25%' },
+      ] }
+      onChange={ action( 'Changed' ) }
+      help="Select font size"
+    />
   ));

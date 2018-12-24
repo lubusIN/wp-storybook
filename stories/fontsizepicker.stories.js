@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { FontSizePicker } from '@wordpress/components';
 import FontSizePickerReadme from '@wordpress/components/src/font-size-picker/README.md'
 
-const FontSizePickerStyles = {
-  width: '240px',
-  margin: 'auto',
-  marginTop: '10%',
-};
-
-const FontSizePickerDecorator = (storyFn) => (
-  <div style={FontSizePickerStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('FontSizePicker', module)
-  .addDecorator(FontSizePickerDecorator)
+storiesOf('Components|FontSizePicker', module)
   .addDecorator(withReadme(FontSizePickerReadme))
   .add('Basic', () => (
     <FontSizePicker

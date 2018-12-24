@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { DropdownMenu } from '@wordpress/components';
 import DropdownMenuReadme from '@wordpress/components/src/dropdown-menu/README.md'
 
-const DropdownMenuStyles = {
-    width: '50px',
-    margin: 'auto',
-    marginTop: '10%'
-};
-
-const DropdownMenuDecorator = (storyFn) => (
-  <div style={DropdownMenuStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('DropdownMenu', module)
-    .addDecorator(DropdownMenuDecorator)
+storiesOf('Components|DropdownMenu', module)
     .addDecorator(withReadme(DropdownMenuReadme))
     .add('Basic', () => (
         <DropdownMenu

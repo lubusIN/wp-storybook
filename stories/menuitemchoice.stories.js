@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { MenuGroup, MenuItemsChoice } from '@wordpress/components';
 import MenuItemsChoiceReadme from '@wordpress/components/src/menu-items-choice/README.md'
 
-const MenuItemsChoiceStyles = {
-  width: '240px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const MenuItemsChoiceDecorator = (storyFn) => (
-  <div style={MenuItemsChoiceStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('MenuItemsChoice', module)
-  .addDecorator(MenuItemsChoiceDecorator)
+storiesOf('Components|MenuItemsChoice', module)
   .addDecorator(withReadme(MenuItemsChoiceReadme))
   .add('Basic', () => (
     <React.Fragment>

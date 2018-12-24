@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { TabPanel } from '@wordpress/components';
 import TabPanelReadme from '@wordpress/components/src/tab-panel/README.md'
 
-const TabPanelStyles = {
-    width: '280px',
-    margin: 'auto',
-    marginTop: '10%'
-};
-  
-const TabPanelDecorator = (storyFn) => (
-    <div style={TabPanelStyles}>
-        { storyFn() }
-    </div>
-);
-  
-storiesOf('TabPanel', module)
-    .addDecorator( TabPanelDecorator )
+storiesOf('Components|TabPanel', module)
     .addDecorator(withReadme(TabPanelReadme))
     .add('Basic', () => (
         <TabPanel className="my-tab-panel"

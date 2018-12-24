@@ -7,18 +7,6 @@ import { withReadme, withDocs } from 'storybook-readme';
 
 import { Toolbar } from '@wordpress/components';
 import ToolbarReadme from '@wordpress/components/src/toolbar/README.md'
-
-const ToolbarStyles = {
-    width: '280px',
-    margin: 'auto',
-    marginTop: '10%'
-};
-  
-const ToolbarDecorator = (storyFn) => (
-    <div style={ToolbarStyles}>
-        { storyFn() }
-    </div>
-);
   
 function createThumbsControl( thumbs ) {
     return {
@@ -29,8 +17,7 @@ function createThumbsControl( thumbs ) {
     };
 }
 
-storiesOf('Toolbar', module)
-    .addDecorator( ToolbarDecorator )
+storiesOf('Components|Toolbar', module)
     .addDecorator(withReadme(ToolbarReadme))
     .add('Basic', () => (
         <Toolbar controls={ [ 'up', 'down' ].map( createThumbsControl ) } />

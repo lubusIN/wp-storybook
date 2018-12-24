@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { TextareaControl } from '@wordpress/components';
 import TextareaControlReadme from '@wordpress/components/src/textarea-control/README.md'
 
-const TextareaControlStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const TextareaControlDecorator = (storyFn) => (
-  <div style={TextareaControlStyles}>
-      { storyFn() }
-  </div>
-);
-
-storiesOf('TextareaControl', module)
-  .addDecorator(TextareaControlDecorator)
+storiesOf('Components|TextareaControl', module)
   .addDecorator(withReadme(TextareaControlReadme))
   .add('Basic', () => (
     <TextareaControl

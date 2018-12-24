@@ -8,21 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { ColorPicker } from '@wordpress/components';
 import ColorPickerReadme from '@wordpress/components/src/color-picker/README.md'
 
-const ColorPickerStyles = {
-  textAlign: 'center',
-  width: '300px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const ColorPickerDecorator = (storyFn) => (
-  <div style={ColorPickerStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('ColorPicker', module)
-  .addDecorator(ColorPickerDecorator)
+storiesOf('Components|ColorPicker', module)
   .addDecorator(withReadme(ColorPickerReadme))
   .add('Basic', () => (
     <ColorPicker

@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { PanelBody } from '@wordpress/components';
 import PanelBodyReadme from '@wordpress/components/src/panel/README.md'
 
-const PanelBodyStyles = {
-  width: '280px',
-  margin: 'auto',
-  marginTop: '10%'
-};
-
-const PanelBodyDecorator = (storyFn) => (
-  <div style={PanelBodyStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('PanelBody', module)
-  .addDecorator(PanelBodyDecorator)
+storiesOf('Components|PanelBody', module)
   .addDecorator(withReadme(PanelBodyReadme))
   .add('Basic', () => (
     <React.Fragment>

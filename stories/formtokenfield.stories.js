@@ -8,20 +8,7 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { FormTokenField } from '@wordpress/components';
 import FormTokenFieldReadme from '@wordpress/components/src/form-token-field/README.md'
 
-const FormTokenFieldStyles = {
-  width: '400px',
-  margin: 'auto',
-  marginTop: '10%',
-};
-
-const FormTokenFieldDecorator = (storyFn) => (
-  <div style={FormTokenFieldStyles}>
-    { storyFn() }
-  </div>
-);
-
-storiesOf('FormTokenField', module)
-  .addDecorator(FormTokenFieldDecorator)
+storiesOf('Components|FormTokenField', module)
   .addDecorator(withReadme(FormTokenFieldReadme))
   .add('Basic', () => (
     <FormTokenField 
