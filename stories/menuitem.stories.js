@@ -6,34 +6,27 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { MenuItem } from '@wordpress/components';
-import MenuItemReadme from '@wordpress/components/src/menu-item/README.md'
+import { withState } from '@wordpress/compose';
+import MenuItemReadme from '@wordpress/components/src/menu-item/README.md';
+
+const MenuItemActive = withState( {
+  isActive: true,
+} )( ( { isActive, setState } ) => (
+  <MenuItem
+      icon={ isActive ? 'yes' : 'no' }
+      isSelected={ isActive }
+      onClick={ () => setState( state => ( { isActive: ! state.isActive } ) ) }
+  >
+      Click To Toggle
+  </MenuItem>
+) );
 
 storiesOf('Components|MenuItem', module)
   .addDecorator(withReadme(MenuItemReadme))
   .add('Basic', () => (
-    <React.Fragment>
-      <MenuItem onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
-      <MenuItem onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
-      <MenuItem onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
-      <MenuItem onClick={ action( 'Clicked' ) }> Item 4 </MenuItem>
-      <MenuItem onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
-    </React.Fragment>
+      <MenuItem onClick={ action( 'Clicked' ) }> Menu Item </MenuItem>
   ))
   .add('with Icon', () => (
-    <React.Fragment>
-      <MenuItem icon="image-crop" onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
-      <MenuItem icon="image-rotate" onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
-      <MenuItem icon="image-rotate-right" onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
-      <MenuItem icon="image-rotate-right" onClick={ action( 'Clicked' ) }> Item 4 </MenuItem>
-      <MenuItem icon="image-flip-vertical" onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
-    </React.Fragment>
+      <MenuItem icon="image-rotate-right" onClick={ action( 'Clicked' ) }> Menu Item </MenuItem>
   ))
-  .add('with Selected', () => (
-    <React.Fragment>
-      <MenuItem  onClick={ action( 'Clicked' ) }> Item 1 </MenuItem>
-      <MenuItem  onClick={ action( 'Clicked' ) }> Item 2 </MenuItem>
-      <MenuItem  onClick={ action( 'Clicked' ) }> Item 3 </MenuItem>
-      <MenuItem  onClick={ action( 'Clicked' ) } isSelected={ true }> Item 4 </MenuItem>
-      <MenuItem  onClick={ action( 'Clicked' ) }> Item 5 </MenuItem>
-    </React.Fragment>
-  ));
+  .add('with Selected', () => <MenuItemActive /> );

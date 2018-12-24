@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { PanelBody } from '@wordpress/components';
-import PanelBodyReadme from '@wordpress/components/src/panel/README.md'
+import PanelBodyReadme from '@wordpress/components/src/panel/README.md';
 
 storiesOf('Components|PanelBody', module)
   .addDecorator(withReadme(PanelBodyReadme))

@@ -5,7 +5,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { ColorIndicator } from '@wordpress/components';
-import ColorIndicatorReadme from '@wordpress/components/src/color-indicator/README.md'
+import ColorIndicatorReadme from '@wordpress/components/src/color-indicator/README.md';
 
 storiesOf('Components|ColorIndicator', module)
   .addDecorator(withReadme(ColorIndicatorReadme))

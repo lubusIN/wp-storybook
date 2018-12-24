@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { PanelRow, Button} from '@wordpress/components';
-import PanelRowReadme from '@wordpress/components/src/panel/README.md'
+import PanelRowReadme from '@wordpress/components/src/panel/README.md';
 
 storiesOf('Components|PanelRow', module)
   .addDecorator(withReadme(PanelRowReadme))

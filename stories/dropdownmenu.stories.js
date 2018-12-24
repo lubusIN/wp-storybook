@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { DropdownMenu } from '@wordpress/components';
-import DropdownMenuReadme from '@wordpress/components/src/dropdown-menu/README.md'
+import DropdownMenuReadme from '@wordpress/components/src/dropdown-menu/README.md';
 
 storiesOf('Components|DropdownMenu', module)
     .addDecorator(withReadme(DropdownMenuReadme))

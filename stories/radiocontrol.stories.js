@@ -6,21 +6,24 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { RadioControl } from '@wordpress/components';
-import RadioControlReadme from '@wordpress/components/src/radio-control/README.md'
+import { withState } from '@wordpress/compose';
+import RadioControlReadme from '@wordpress/components/src/radio-control/README.md';
 
-storiesOf('Components|RadioControl', module)
-  .addDecorator(withReadme(RadioControlReadme))
-  .add('Basic', () => (
-     <RadioControl
+const RadioControlBasic = withState( {
+    option: 'a',
+} )( ( { option, setState } ) => ( 
+    <RadioControl
         label="User type"
         help="The type of the current user"
-        selected={ 'a' }
+        selected={ option }
         options={ [
             { label: 'Author', value: 'a' },
             { label: 'Editor', value: 'e' },
-            { label: 'User', value: 'u' },
-            { label: 'Content Manager', value: 'c' },
         ] }
-        onChange={ action( 'changed' ) }
+        onChange={ ( option ) => { setState( { option } ) } }
     />
-  ));
+) );
+
+storiesOf('Components|RadioControl', module)
+  .addDecorator(withReadme(RadioControlReadme))
+  .add('Basic', () => <RadioControlBasic />);

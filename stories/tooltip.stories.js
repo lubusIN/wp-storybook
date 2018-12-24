@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Tooltip, Button } from '@wordpress/components';
-import TooltipReadme from '@wordpress/components/src/tooltip/README.md'
+import TooltipReadme from '@wordpress/components/src/tooltip/README.md';
 
 storiesOf('Components|Tooltip', module)
   .addDecorator(withReadme(TooltipReadme))

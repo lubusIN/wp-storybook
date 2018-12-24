@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Button, ButtonGroup } from "@wordpress/components";
-import ButtonGroupReadme from '@wordpress/components/src/button-group/README.md'
+import ButtonGroupReadme from '@wordpress/components/src/button-group/README.md';
 
 storiesOf('Components|ButtonGroup', module)
   .addDecorator(withReadme(ButtonGroupReadme))

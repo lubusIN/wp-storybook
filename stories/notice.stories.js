@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Notice } from '@wordpress/components';
-import NoticeReadme from '@wordpress/components/src/notice/README.md'
+import NoticeReadme from '@wordpress/components/src/notice/README.md';
 
 storiesOf('Components|Notice', module)
   .addDecorator(withReadme(NoticeReadme))

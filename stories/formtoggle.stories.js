@@ -6,20 +6,29 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { FormToggle } from '@wordpress/components';
-import FormToggleReadme from '@wordpress/components/src/form-toggle/README.md'
+import { withState } from '@wordpress/compose';
+import FormToggleReadme from '@wordpress/components/src/form-toggle/README.md';
+
+const BasicToggle = withState( {
+  checked: false,
+ } )( ( { checked, setState } ) => (
+  <FormToggle 
+  checked={ checked }
+  onChange={ () => setState( state => ( { checked: ! state.checked } ) ) } 
+  />
+) )
+
+const CheckedToggle = withState( {
+  checked: true,
+ } )( ( { checked, setState } ) => (
+  <FormToggle 
+  checked={ checked }
+  onChange={ () => setState( state => ( { checked: ! state.checked } ) ) } 
+  />
+) )
 
 storiesOf('Components|FormToggle', module)
   .addDecorator(withReadme(FormToggleReadme))
-  .add('Basic', () => ( 
-    <FormToggle 
-        checked={ false }
-        onChange={ action( 'Changed' ) }
-    />
-  ))
-  .add('Checked', () => ( 
-    <FormToggle 
-      checked={ true }
-      onChange={ action( 'Changed' ) }
-    />
-  ));
+  .add('Basic', () => <BasicToggle />)
+  .add('Checked', () => <CheckedToggle />);
 

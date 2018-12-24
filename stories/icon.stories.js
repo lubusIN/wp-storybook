@@ -5,7 +5,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Icon } from '@wordpress/components';
-import IconReadme from '@wordpress/components/src/icon/README.md'
+import IconReadme from '@wordpress/components/src/icon/README.md';
 
 const MyIconComponent = () => <svg><path d="M5 4v3h5.5v12h3V7H19V4z" /></svg>;
 

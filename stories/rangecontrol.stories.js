@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { RangeControl } from '@wordpress/components';
-import RangeControlReadme from '@wordpress/components/src/range-control/README.md'
+import RangeControlReadme from '@wordpress/components/src/range-control/README.md';
 
 storiesOf('Components|RangeControl', module)
   .addDecorator(withReadme(RangeControlReadme))

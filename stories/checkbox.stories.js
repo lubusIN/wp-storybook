@@ -6,37 +6,56 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { CheckboxControl } from "@wordpress/components";
-import CheckboxControlReadme from '@wordpress/components/src/checkbox-control/README.md'
+import { withState } from '@wordpress/compose';
+import CheckboxControlReadme from '@wordpress/components/src/checkbox-control/README.md';
+
+const CheckboxControlBasic = withState( {
+  isChecked: false,
+} )( ( { isChecked, setState } ) => ( 
+  <CheckboxControl
+      label="Is author"
+      checked={ isChecked }
+      onChange={ ( isChecked ) => { setState( { isChecked } ) } }
+  />
+) );
+
+const CheckboxControlChecked = withState( {
+  isChecked: true,
+} )( ( { isChecked, setState } ) => ( 
+  <CheckboxControl
+      label="Is author"
+      checked={ isChecked }
+      onChange={ ( isChecked ) => { setState( { isChecked } ) } }
+  />
+) );
+
+const CheckboxControlHeading = withState( {
+  isChecked: true,
+} )( ( { isChecked, setState } ) => ( 
+  <CheckboxControl
+      heading="User"
+      label="Is author"
+      checked={ isChecked }
+      onChange={ ( isChecked ) => { setState( { isChecked } ) } }
+  />
+) );
+
+const CheckboxControlHelp = withState( {
+  isChecked: true,
+} )( ( { isChecked, setState } ) => ( 
+  <CheckboxControl
+      heading="User"
+      label="Is author"
+      help="Is the user a author or not?"
+      checked={ isChecked }
+      onChange={ ( isChecked ) => { setState( { isChecked } ) } }
+  />
+) );
 
 storiesOf('Components|CheckboxControl', module)
   .addDecorator(withReadme(CheckboxControlReadme))
-  .add('Basic', () => 
-      <CheckboxControl
-        label="Is author"
-        onChange={ action( 'Changed' ) }
-      />
-  )
-  .add('Checked', () => 
-      <CheckboxControl
-        label="Is author"
-        checked={ true }
-        onChange={ action( 'Changed' ) }
-      />
-  )
-  .add('With Heading', () => 
-      <CheckboxControl
-        heading="User"
-        label="Is author"
-        checked={ true }
-        onChange={ action( 'Changed' ) }
-      />
-  )
-  .add('With Help', () => 
-      <CheckboxControl
-        label="Is author"
-        help="Is the user a author or not?"
-        checked={ true }
-        onChange={ action( 'Changed' ) }
-      />
-  );
+  .add('Basic', () => <CheckboxControlBasic />)
+  .add('Checked', () => <CheckboxControlChecked/> )
+  .add('With Heading', () => <CheckboxControlHeading /> )
+  .add('With Help', () => <CheckboxControlHelp />);
 

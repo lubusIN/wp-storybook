@@ -6,23 +6,32 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { TextControl } from '@wordpress/components';
-import TextControlReadme from '@wordpress/components/src/text-control/README.md'
+import { withState } from '@wordpress/compose';
+import TextControlReadme from '@wordpress/components/src/text-control/README.md';
+
+const TextControlBasic = withState( {
+  className: '',
+} )( ( { className, setState } ) => ( 
+  <TextControl
+      label="Additional CSS Class"
+      value={ className }
+      onChange={ ( className ) => setState( { className } ) }
+  />
+) );
+
+const TextControlHelp = withState( {
+  className: '',
+} )( ( { className, setState } ) => ( 
+  <TextControl
+      label="Additional CSS Class"
+      help="Custom classes for block"
+      value={ className }
+      onChange={ ( className ) => setState( { className } ) }
+  />
+) );
 
 storiesOf('Components|TextControl', module)
   .addDecorator(withReadme(TextControlReadme))
-  .add('Basic', () => (
-    <TextControl
-      label="Additional CSS Class"
-      value={ "is-style-fancy" }
-      onChange={ action( 'Changed' ) }
-    />
-  ))
-  .add('With Help', () => (
-    <TextControl
-      label="Additional CSS Class"
-      value={ "is-style-fancy" }
-      onChange={ action( 'Changed' ) }
-      help="Custom classes for block"
-    />
-  ));
+  .add('Basic', () => <TextControlBasic />)
+  .add('With Help', () => <TextControlHelp />);
 

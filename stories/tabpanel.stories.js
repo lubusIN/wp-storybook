@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { TabPanel } from '@wordpress/components';
-import TabPanelReadme from '@wordpress/components/src/tab-panel/README.md'
+import TabPanelReadme from '@wordpress/components/src/tab-panel/README.md';
 
 storiesOf('Components|TabPanel', module)
     .addDecorator(withReadme(TabPanelReadme))
@@ -27,7 +27,7 @@ storiesOf('Components|TabPanel', module)
                 },
             ] }>
             {
-                ( tab ) => <p>{ tab.title }</p>
+                ( tab ) => <p>{ tab.title } content</p>
             }
         </TabPanel>
         ))

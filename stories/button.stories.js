@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Button } from "@wordpress/components";
-import ButtonReadme from '@wordpress/components/src/button/README.md'
+import ButtonReadme from '@wordpress/components/src/button/README.md';
 
 storiesOf('Components|Button', module)
   .addDecorator(withReadme(ButtonReadme)) 

@@ -6,21 +6,34 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { ColorPicker } from '@wordpress/components';
-import ColorPickerReadme from '@wordpress/components/src/color-picker/README.md'
+import { withState } from '@wordpress/compose';
+import ColorPickerReadme from '@wordpress/components/src/color-picker/README.md';
+
+const ColorPickerBasic = withState( {
+  color: '#f00',
+} )( ( { color, setState } ) => {
+  return (
+      <ColorPicker
+          color={ color }
+          onChangeComplete={ ( value ) => setState( value.hex ) }
+      />
+  );
+} );
+
+const ColorPickerDisableAlpha = withState( {
+  color: '#f00',
+} )( ( { color, setState } ) => {
+  return (
+      <ColorPicker
+          color={ color }
+          onChangeComplete={ ( value ) => setState( value.hex ) }
+          disableAlpha
+      />
+  );
+} );
 
 storiesOf('Components|ColorPicker', module)
   .addDecorator(withReadme(ColorPickerReadme))
-  .add('Basic', () => (
-    <ColorPicker
-      color={ '#f00' }
-      onChangeComplete={ action( 'Changed' ) }
-    />
-  ))
-  .add('DisableAlpha', () => (
-    <ColorPicker
-      color={ '#f00' }
-      disableAlpha
-      onChangeComplete={ action( 'Changed' ) }
-    />
-  ));
+  .add('Basic', () => <ColorPickerBasic />)
+  .add('DisableAlpha', () => <ColorPickerDisableAlpha />);
 

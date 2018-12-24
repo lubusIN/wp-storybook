@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { MenuGroup, MenuItem } from '@wordpress/components';
-import MenuGroupReadme from '@wordpress/components/src/menu-group/README.md'
+import MenuGroupReadme from '@wordpress/components/src/menu-group/README.md';
 
 storiesOf('Components|MenuGroup', module)
   .addDecorator(withReadme(MenuGroupReadme))

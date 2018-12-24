@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { ExternalLink } from '@wordpress/components';
-import ExternalLinkReadme from '@wordpress/components/src/external-link/README.md'
+import ExternalLinkReadme from '@wordpress/components/src/external-link/README.md';
 
 storiesOf('Components|ExternalLink', module)
   .addDecorator(withReadme(ExternalLinkReadme))

@@ -6,21 +6,34 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { DateTimePicker } from '@wordpress/components';
-import DateTimePickerReadme from '@wordpress/components/src/date-time/README.md'
+import { withState } from '@wordpress/compose';
+import DateTimePickerReadme from '@wordpress/components/src/date-time/README.md';
+
+const DateTimePickerBasic = withState( {
+  date: new Date(),
+} )( ( { date, setState } ) => {
+  return (
+      <DateTimePicker
+          currentDate={ date }
+          onChange={ ( date ) => setState( { date } ) }
+      />
+  );
+} );
+
+const DateTimePicker12Hrs = withState( {
+  date: new Date(),
+} )( ( { date, setState } ) => {
+  return (
+      <DateTimePicker
+          currentDate={ date }
+          onChange={ ( date ) => setState( { date } ) }
+          is12Hour={ true }
+      />
+  );
+} );
 
 storiesOf('Components|DateTimePicker', module)
   .addDecorator(withReadme(DateTimePickerReadme))
-  .add('Basic', () => (
-    <DateTimePicker
-      currentDate={ new Date() }
-      onChange={ action( 'Changed' ) }
-    />
-  ))
-  .add('12Hrs', () => (
-    <DateTimePicker
-      currentDate={ new Date() }
-      is12Hour={ true }
-      onChange={ action( 'Changed' ) }
-    />
-  ));
+  .add('Basic', () => <DateTimePickerBasic/> )
+  .add('12Hrs', () => <DateTimePicker12Hrs/> );
 

@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { Placeholder } from '@wordpress/components';
-import PlaceholderReadme from '@wordpress/components/src/placeholder/README.md'
+import PlaceholderReadme from '@wordpress/components/src/placeholder/README.md';
 
 storiesOf('Components|PlaceHolder', module)
   .addDecorator(withReadme(PlaceholderReadme))

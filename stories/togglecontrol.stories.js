@@ -6,23 +6,31 @@ import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
 import { ToggleControl } from '@wordpress/components';
-import ToggleControlReadme from '@wordpress/components/src/toggle-control/README.md'
+import { withState } from '@wordpress/compose';
+import ToggleControlReadme from '@wordpress/components/src/toggle-control/README.md';
+
+const ToggleControlBasic = withState( {
+  hasFixedBackground: false,
+} )( ( { hasFixedBackground, setState } ) => ( 
+  <ToggleControl
+      label="Fixed Background"
+      checked={ hasFixedBackground }
+      onChange={ () => setState( ( state ) => ( { hasFixedBackground: ! state.hasFixedBackground } ) ) }
+  />
+) );
+
+const ToggleControlHelp = withState( {
+  hasFixedBackground: false,
+} )( ( { hasFixedBackground, setState } ) => ( 
+  <ToggleControl
+      label="Fixed Background"
+      help={ hasFixedBackground ? 'Has fixed background.' : 'No fixed background.' } 
+      checked={ hasFixedBackground }
+      onChange={ () => setState( ( state ) => ( { hasFixedBackground: ! state.hasFixedBackground } ) ) }
+  />
+) );
 
 storiesOf('Components|ToggleControl', module)
   .addDecorator(withReadme(ToggleControlReadme))
-  .add('Basic', () => (
-    <ToggleControl
-      label="Fixed Background"
-      checked={ true }
-      onChange={ action( 'Changed' ) }
-  />
-  ))
-  .add('With Help', () => (
-    <ToggleControl
-      label="Fixed Background"
-      help={ true ? 'Has fixed background.' : 'No fixed background.' } 
-      checked={ true }
-      onChange={ action( 'Changed' ) }
-    />
-  ));
-
+  .add('Basic', () => <ToggleControlBasic />)
+  .add('With Help', () => <ToggleControlHelp />);
