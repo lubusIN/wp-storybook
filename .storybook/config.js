@@ -3,6 +3,7 @@ import { withOptions } from '@storybook/addon-options';
 import { withConsole } from '@storybook/addon-console';
 import centered from '@storybook/addon-centered';
 import { withViewport } from '@storybook/addon-viewport';
+import { checkA11y } from '@storybook/addon-a11y';
 
 import "./style.css";
 import "@wordpress/components/build-style/style.css";
@@ -11,6 +12,7 @@ import "@wordpress/components/build-style/style.css";
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 addDecorator(centered);
 addDecorator(withViewport());
+addDecorator(checkA11y);
 
 // Options
 // Option defaults:
