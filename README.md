@@ -27,7 +27,7 @@ If you have any suggestions/feature request that you would like to see in the up
 - Explore and test various WordPress components
 - Search and view different states/variate of components
 - Test on different viewports
-- Readme and live preview of component at once
+- Readme and live preview of component in one place
 
 ## Development
 
