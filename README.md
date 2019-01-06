@@ -51,7 +51,7 @@ If you discover any security related issues, please email to [ajit@lubus.in](mai
 
 ## Credits
 
-[Ajit Bohra](http://https://twitter.com/ajitbohra)
+[Ajit Bohra](https://twitter.com/ajitbohra)
 
 ## Other Gutenberg Goodies
 <table width="100%">
