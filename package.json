@@ -26,6 +26,7 @@
     "@storybook/addons": "^4.1.6",
     "@storybook/react": "^4.1.6",
     "babel-loader": "^8.0.5",
+    "react-github-corner": "^2.3.0",
     "storybook-readme": "^4.0.5"
   }
 }

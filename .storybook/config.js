@@ -1,18 +1,27 @@
+import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { withConsole } from '@storybook/addon-console';
 import centered from '@storybook/addon-centered';
 import { withViewport } from '@storybook/addon-viewport';
 import { checkA11y } from '@storybook/addon-a11y';
+import GithubCorner from 'react-github-corner';
 
 import "./style.css";
 import "@wordpress/components/build-style/style.css";
 
-// Console
-addDecorator((storyFn, context) => withConsole()(storyFn)(context));
-addDecorator(centered);
-addDecorator(withViewport());
-addDecorator(checkA11y);
+addDecorator((storyFn, context) => withConsole()(storyFn)(context)); // Send console log to action logger
+addDecorator(centered); // Center align stories
+addDecorator(withViewport()); // Device viewport
+addDecorator(checkA11y); // Accessibility
+
+// Add Github repo link corner 
+addDecorator((storyFn) =>
+  <div>
+    {storyFn()}
+    <GithubCorner href="https://github.com/lubusIN/wp-storybook" />
+  </div>
+);
 
 // Options
 // Option defaults:
