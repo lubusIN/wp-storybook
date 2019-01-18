@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
+import { storiesOf, addDecorator, addParameters } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
@@ -31,7 +31,7 @@ storiesOf('Components|Dropdown', module)
 
 storiesOf('Components|Dropdown', module)  
     .addDecorator(withReadme(DropdownReadme))
-    .addDecorator(withViewport('iphone5'))
+    .addParameters(withViewport('iphone5'))
     .add('ExpandOnMobile', () => (
         <Dropdown
             className="my-container-class-name"
