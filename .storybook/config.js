@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
-import centered from '@storybook/addon-centered';
+import centered from '@storybook/addon-centered/react';
 import { withViewport } from '@storybook/addon-viewport';
 import { withA11Y } from '@storybook/addon-a11y';
 import GithubCorner from 'react-github-corner';
