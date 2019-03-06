@@ -3,7 +3,7 @@ import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import centered from '@storybook/addon-centered/react';
 import { withViewport } from '@storybook/addon-viewport';
-import { withA11Y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import GithubCorner from 'react-github-corner';
 
 import "./style.css";
@@ -12,7 +12,7 @@ import "@wordpress/components/build-style/style.css";
 addDecorator((storyFn, context) => withConsole()(storyFn)(context)); // Send console log to action logger
 addDecorator(centered); // Center align stories
 addParameters(withViewport()); // Device viewport
-addDecorator(withA11Y); // Accessibility
+addDecorator(withA11y); // Accessibility
 
 // Add Github repo link corner 
 addDecorator((storyFn) =>
