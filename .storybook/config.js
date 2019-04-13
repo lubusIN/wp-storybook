@@ -5,6 +5,7 @@ import centered from '@storybook/addon-centered/react';
 import { withViewport } from '@storybook/addon-viewport';
 import { withA11y } from '@storybook/addon-a11y';
 import GithubCorner from 'react-github-corner';
+import registerWithPanelTitle from 'storybook-readme/registerWithPanelTitle';
 
 import "./style.css";
 import "@wordpress/components/build-style/style.css";
@@ -13,6 +14,7 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context)); // Send con
 addDecorator(centered); // Center align stories
 addParameters(withViewport()); // Device viewport
 addDecorator(withA11y); // Accessibility
+registerWithPanelTitle('Docs');
 
 // Add Github repo link corner 
 addDecorator((storyFn) =>

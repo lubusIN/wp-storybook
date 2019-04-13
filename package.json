@@ -14,19 +14,19 @@
     "@wordpress/compose": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@storybook/addon-a11y": "^5.0.0",
-    "@storybook/addon-actions": "^5.0.0",
+    "@babel/core": "^7.4.3",
+    "@storybook/addon-a11y": "^5.0.6",
+    "@storybook/addon-actions": "^5.0.6",
     "@storybook/addon-centered": "^5.0.0",
     "@storybook/addon-console": "latest",
-    "@storybook/addon-info": "^5.0.0",
+    "@storybook/addon-info": "^5.0.6",
     "@storybook/addon-links": "^5.0.0",
     "@storybook/addon-options": "^5.0.0",
-    "@storybook/addon-viewport": "^5.0.0",
+    "@storybook/addon-viewport": "^5.0.6",
     "@storybook/addons": "^5.0.0",
-    "@storybook/react": "^5.0.0",
+    "@storybook/react": "^5.0.6",
     "babel-loader": "^8.0.5",
     "react-github-corner": "^2.3.0",
-    "storybook-readme": "^4.0.5"
+    "storybook-readme": "^5.0.2"
   }
 }
