@@ -1,23 +1,33 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { TreeSelect } from '@wordpress/components';
 import { withState } from '@wordpress/compose';
 import TreeSelectReadme from '@wordpress/components/src/button/README.md';
 
-const TreeSelectBasic = withState( {
+/**
+ * Stories
+ */
+const TreeSelectBasic = withState({
     page: 'p21',
-} )( ( { page, setState } ) => (
+})(({ page, setState }) => (
     <TreeSelect
         label="Parent page"
         noOptionLabel="No parent page"
-        onChange={ ( page ) => setState( { page } ) }
-        selectedId={ page }
-        tree={ [
+        onChange={(page) => setState({ page })}
+        selectedId={page}
+        tree={[
             {
                 name: 'Page 1',
                 id: 'p1',
@@ -42,9 +52,9 @@ const TreeSelectBasic = withState( {
                     },
                 ],
             },
-        ] }
+        ]}
     />
-) );
+));
 
 storiesOf('Components|TreeSelect', module)
     .addDecorator(withReadme(TreeSelectReadme))

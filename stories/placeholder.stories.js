@@ -1,13 +1,23 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { Placeholder } from '@wordpress/components';
 import PlaceholderReadme from '@wordpress/components/src/placeholder/README.md';
 
+/**
+ * Stories
+ */
 storiesOf('Components|PlaceHolder', module)
   .addDecorator(withReadme(PlaceholderReadme))
   .add('Basic', () => (

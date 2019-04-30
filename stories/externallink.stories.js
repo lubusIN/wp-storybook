@@ -1,16 +1,25 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPres Dependencies
+ */
 import { ExternalLink } from '@wordpress/components';
 import ExternalLinkReadme from '@wordpress/components/src/external-link/README.md';
 
+/**
+ * Stories
+ */
 storiesOf('Components|ExternalLink', module)
   .addDecorator(withReadme(ExternalLinkReadme))
   .add('Basic', () => (
     <ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
-));
-
+  ));

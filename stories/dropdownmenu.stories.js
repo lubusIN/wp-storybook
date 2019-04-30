@@ -1,13 +1,23 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { DropdownMenu } from '@wordpress/components';
 import DropdownMenuReadme from '@wordpress/components/src/dropdown-menu/README.md';
 
+/**
+ * Stories
+ */
 storiesOf('Components|DropdownMenu', module)
     .addDecorator(withReadme(DropdownMenuReadme))
     .add('Basic', () => (
@@ -38,4 +48,3 @@ storiesOf('Components|DropdownMenu', module)
             ] }
         />
     ));
-
