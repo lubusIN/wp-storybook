@@ -18,10 +18,6 @@ Explore various WordPress react components to speed up your development.
 
 ![Storybook Demo](assets/demo.gif)
 
-## Feedback / Suggestions
-
-If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/wp-storybook/issues)
-
 ## Usage
 
 - Visit https://wp-storybook.netlify.com/
@@ -40,6 +36,11 @@ If you have any suggestions/feature request that you would like to see in the up
 ## Changelog
 
 Please see the [Changelog](CHANGELOG.md) 
+
+## Feedback / Suggestions
+
+If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/wp-storybook/issues)
+
 ## Contributing
 
 Thank you in advance if you wish to contribute to the `WP Storybook`. You can read the contribution guidelines [here](CONTRIBUTING.md)
