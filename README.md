@@ -20,7 +20,7 @@ Explore various WordPress react components to speed up your development.
 
 ## Feedback / Suggestions
 
-If you have any suggestions/feature request that you would like to see in the upcoming releases , feel free to let us know in the [issues section](https://github.com/lubusIN/wp-storybook/issues)
+If you have any suggestions/feature request that you would like to see in the upcoming releases, feel free to let us know in the [issues section](https://github.com/lubusIN/wp-storybook/issues)
 
 ## Usage
 
@@ -42,9 +42,9 @@ If you have any suggestions/feature request that you would like to see in the up
 Please see the [Changelog](CHANGELOG.md) 
 ## Contributing
 
-Thank you for considering contributing to the `WP Storybook`. You can read the contribution guide lines [here](CONTRIBUTING.md)
+Thank you in advance if you wish to contribute to the `WP Storybook`. You can read the contribution guidelines [here](CONTRIBUTING.md)
 
-Check the development tasklist [here](https://github.com/lubusIN/wp-storybook/projects/1) if something interest you or suggest something [here](https://github.com/lubusIN/wp-storybook/issues)
+Check the development tasklist [here](https://github.com/lubusIN/wp-storybook/projects/1), if something interests you or want to suggest something click [here](https://github.com/lubusIN/wp-storybook/issues)
 
 ## Security
 
@@ -100,4 +100,4 @@ You can pledge on [patreon](https://www.patreon.com/lubus) to support the develo
 
 ## License
 
-`WP Storybook` is open-sourced software licensed under the [MIT](LICENSE)
+`WP Storybook` is an open-source software licensed under the [MIT](LICENSE)
