@@ -1,14 +1,24 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { ColorPalette } from '@wordpress/components';
 import { withState } from '@wordpress/compose';
 import ColorPaletteReadme from '@wordpress/components/src/color-palette/README.md';
 
+/**
+ * Stories
+ */
 const ColorPaletteBasic = withState( {
   color: '#f00',
 } )( ( { color, setState } ) => { 
@@ -30,4 +40,3 @@ const ColorPaletteBasic = withState( {
 storiesOf('Components|ColorPalette', module)
   .addDecorator(withReadme(ColorPaletteReadme))
   .add('Basic', () => <ColorPaletteBasic />);
-

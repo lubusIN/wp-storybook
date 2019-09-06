@@ -1,72 +1,80 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf, addDecorator, addParameters } from '@storybook/react';
 import { withReadme, withDocs } from 'storybook-readme';
-import { withViewport } from '@storybook/addon-viewport';
 
+/**
+ * WordPress Dependencies
+ */
 import { Dropdown, Button } from '@wordpress/components';
 import DropdownReadme from '@wordpress/components/src/dropdown/README.md';
 
-storiesOf('Components|Dropdown', module)  
+/**
+ * Stories
+ */
+storiesOf('Components|Dropdown', module)
     .addDecorator(withReadme(DropdownReadme))
     .add('Basic', () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
             position="bottom right"
-            renderToggle={ ( { isOpen, onToggle } ) => (
-                <Button isPrimary onClick={ onToggle } aria-expanded={ isOpen }>
+            renderToggle={({ isOpen, onToggle }) => (
+                <Button isPrimary onClick={onToggle} aria-expanded={isOpen}>
                     Toggle Popover!
                 </Button>
-            ) }
-            renderContent={ () => (
+            )}
+            renderContent={() => (
                 <div>
                     This is the content of the popover.
                 </div>
-            ) }
+            )}
         />
     ));
 
-storiesOf('Components|Dropdown', module)  
+storiesOf('Components|Dropdown', module)
     .addDecorator(withReadme(DropdownReadme))
-    .addDecorator(withViewport('iphone5'))
+    .addParameters({ viewport: { defaultViewport: 'iphone5' } })
     .add('ExpandOnMobile', () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
-            expandOnMobile={ true }
+            expandOnMobile={true}
             position="bottom right"
-            renderToggle={ ( { isOpen, onToggle } ) => (
-                <Button isPrimary onClick={ onToggle } aria-expanded={ isOpen }>
+            renderToggle={({ isOpen, onToggle }) => (
+                <Button isPrimary onClick={onToggle} aria-expanded={isOpen}>
                     Full Screen on mobile!
                 </Button>
-            ) }
-            renderContent={ () => (
+            )}
+            renderContent={() => (
                 <div>
                     This is the content of the popover.
                 </div>
-            ) }
+            )}
         />
     ))
     .add('HeaderTitle', () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
-            expandOnMobile={ true }
+            expandOnMobile={true}
             headerTitle="Header Title"
             position="bottom right"
-            renderToggle={ ( { isOpen, onToggle } ) => (
-                <Button isPrimary onClick={ onToggle } aria-expanded={ isOpen }>
+            renderToggle={({ isOpen, onToggle }) => (
+                <Button isPrimary onClick={onToggle} aria-expanded={isOpen}>
                     Full Screen on mobile!
                 </Button>
-            ) }
-            renderContent={ () => (
+            )}
+            renderContent={() => (
                 <div>
                     This is the content of the popover.
                 </div>
-            ) }
+            )}
         />
     ));
-

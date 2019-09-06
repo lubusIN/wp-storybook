@@ -1,81 +1,93 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
+/**
+ * Storybook Dependencies
+ */
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { RangeControl } from '@wordpress/components';
 import { withState } from '@wordpress/compose';
 import RangeControlReadme from '@wordpress/components/src/range-control/README.md';
 
-const RangeControlBasic =  withState( {
+/**
+ * Stories
+ */
+const RangeControlBasic = withState({
   columns: 2,
-} )( ( { columns, setState } ) => ( 
+})(({ columns, setState }) => (
   <RangeControl
-  label="Columns"
-  value={ columns }
-  onChange={ ( columns ) => setState( { columns } ) }
-  min={ 2 }
-  max={ 10 }
-/>
-) );
+    label="Columns"
+    value={columns}
+    onChange={(columns) => setState({ columns })}
+    min={2}
+    max={10}
+  />
+));
 
-const RangeControlWithHelp =  withState( {
+const RangeControlWithHelp = withState({
   columns: 2,
-} )( ( { columns, setState } ) => ( 
+})(({ columns, setState }) => (
   <RangeControl
-  label="Columns"
-  help="Number of columns"
-  value={ columns }
-  onChange={ ( columns ) => setState( { columns } ) }
-  min={ 2 }
-  max={ 10 }
-/>
-) );
+    label="Columns"
+    help="Number of columns"
+    value={columns}
+    onChange={(columns) => setState({ columns })}
+    min={2}
+    max={10}
+  />
+));
 
-const RangeControlWithBeforeIcon =  withState( {
+const RangeControlWithBeforeIcon = withState({
   columns: 2,
-} )( ( { columns, setState } ) => ( 
+})(({ columns, setState }) => (
   <RangeControl
-  label="Columns"
-  help="Number of columns"
-  beforeIcon="layout"
-  value={ columns }
-  onChange={ ( columns ) => setState( { columns } ) }
-  min={ 2 }
-  max={ 10 }
-/>
-) );
+    label="Columns"
+    help="Number of columns"
+    beforeIcon="layout"
+    value={columns}
+    onChange={(columns) => setState({ columns })}
+    min={2}
+    max={10}
+  />
+));
 
-const RangeControlWithAfterIcon =  withState( {
+const RangeControlWithAfterIcon = withState({
   columns: 2,
-} )( ( { columns, setState } ) => ( 
+})(({ columns, setState }) => (
   <RangeControl
-  label="Columns"
-  help="Number of columns"
-  afterIcon="layout"
-  value={ columns }
-  onChange={ ( columns ) => setState( { columns } ) }
-  min={ 2 }
-  max={ 10 }
-/>
-) );
+    label="Columns"
+    help="Number of columns"
+    afterIcon="layout"
+    value={columns}
+    onChange={(columns) => setState({ columns })}
+    min={2}
+    max={10}
+  />
+));
 
-const RangeControlWithReset =  withState( {
+const RangeControlWithReset = withState({
   columns: 2,
-} )( ( { columns, setState } ) => ( 
+})(({ columns, setState }) => (
   <RangeControl
-  label="Columns"
-  help="Number of columns"
-  afterIcon="layout"
-  value={ columns }
-  onChange={ ( columns ) => setState( { columns } ) }
-  min={ 2 }
-  max={ 10 }
-  allowReset={ true }
-/>
-) );
+    label="Columns"
+    help="Number of columns"
+    afterIcon="layout"
+    value={columns}
+    onChange={(columns) => setState({ columns })}
+    min={2}
+    max={10}
+    allowReset={true}
+  />
+));
 
 storiesOf('Components|RangeControl', module)
   .addDecorator(withReadme(RangeControlReadme))

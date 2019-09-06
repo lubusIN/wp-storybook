@@ -10,23 +10,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/components": "^7.0.6",
-    "@wordpress/compose": "^3.0.1"
+    "@wordpress/components": "^7.3.1",
+    "@wordpress/compose": "^3.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@storybook/addon-a11y": "^4.2.0-alpha.10",
-    "@storybook/addon-actions": "^4.1.6",
-    "@storybook/addon-centered": "^4.1.6",
-    "@storybook/addon-console": "^1.1.0",
-    "@storybook/addon-info": "^4.1.6",
-    "@storybook/addon-links": "^4.1.6",
-    "@storybook/addon-options": "^4.1.6",
-    "@storybook/addon-viewport": "^4.1.6",
-    "@storybook/addons": "^4.1.6",
-    "@storybook/react": "^4.1.6",
-    "babel-loader": "^8.0.5",
+    "@babel/core": "^7.6.0",
+    "@storybook/addon-a11y": "^5.1.11",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-centered": "^5.1.11",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-info": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addon-options": "^5.1.11",
+    "@storybook/addon-viewport": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "babel-loader": "^8.0.6",
     "react-github-corner": "^2.3.0",
-    "storybook-readme": "^4.0.5"
+    "storybook-readme": "^5.0.8"
   }
 }

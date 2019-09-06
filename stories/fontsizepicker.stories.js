@@ -1,14 +1,24 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withReadme, withDocs } from 'storybook-readme';
+/**
+ * Storybook Dependencies
+ */
+import { storiesOf } from '@storybook/react';
+import { withReadme } from 'storybook-readme';
 
+/**
+ * WordPress Dependencies
+ */
 import { FontSizePicker } from '@wordpress/components';
 import { withState } from '@wordpress/compose';
 import FontSizePickerReadme from '@wordpress/components/src/font-size-picker/README.md';
 
+/**
+ * Stories
+ */
 const FontSizePickerBasic = withState( {
     fontSize: 16,
 } )( ( { fontSize, setState } ) => {
@@ -41,4 +51,3 @@ const FontSizePickerBasic = withState( {
 storiesOf('Components|FontSizePicker', module)
   .addDecorator(withReadme(FontSizePickerReadme))
   .add('Basic', () => <FontSizePickerBasic />);
-
