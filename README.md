@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/logo.png"></p>
 
 <p align="center">
-<a href="https://wp-storybook.netlify.com/"><img src="https://raw.githubusercontent.com/storybookjs/brand/2715dc64c884e7af358d7128084e6bb3981367ea/badge/badge-storybook.svg" alt="Storybook"></a>
+<a href="https://wp-storybook.netlify.com/"><img src="https://github.com/storybookjs/brand/blob/master/badge/badge-storybook.svg" alt="Storybook"></a>
 <a href="https://app.netlify.com/sites/wp-storybook/deploys"><img src="https://api.netlify.com/api/v1/badges/7f76156a-ca0a-4301-a139-f8540bf60318/deploy-status" alt="Netlify"></a> <a href="https://wp-storybook.netlify.com/"><img src="https://img.shields.io/github/license/lubusIN/wp-storybook.svg" alt="Licence"></a>
 <a href="https://github.com/lubusin/wp-storybook/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs"></a>
 </p>
