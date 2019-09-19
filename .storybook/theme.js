@@ -2,6 +2,7 @@
  * Storybook dependencies
  */
 import { create } from '@storybook/theming';
+import logo from '../assets/wordpress-logo.png'
 
 /**
  * Theme Settings
@@ -66,5 +67,5 @@ export default create({
   // Brand
   brandTitle: 'WordPress',
   brandUrl: 'https://github.com/wordpress/gutenberg/',
-  brandImage: '',
+  brandImage: logo,
 });
