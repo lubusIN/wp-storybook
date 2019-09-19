@@ -13,61 +13,61 @@ import { Button } from '@wordpress/components';
 import ButtonReadme from '@wordpress/components/src/button/README.md';
 
 export default {
-  title: 'Components|Button',
+	title: 'Components|Button',
 };
 
-export const basic = () => <Button onClick={action('clicked')}>Click Me</Button>;
+export const basic = () => <Button onClick={ action( 'clicked' ) }>Click Me</Button>;
 
 export const href = () => (
-  <Button href="https://www.wordpress.org" onClick={action('clicked')}>
+	<Button href="https://www.wordpress.org" onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const isDefault = () => (
-  <Button isDefault onClick={action('clicked')}>
+	<Button isDefault onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const primary = () => (
-  <Button isPrimary onClick={action('clicked')}>
+	<Button isPrimary onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const large = () => (
-  <Button isLarge onClick={action('clicked')}>
+	<Button isLarge onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const small = () => (
-  <Button isSmall onClick={action('clicked')}>
+	<Button isSmall onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const toggled = () => (
-  <Button isToggled onClick={action('clicked')}>
+	<Button isToggled onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const busy = () => (
-  <Button isPrimary isBusy onClick={action('clicked')}>
+	<Button isPrimary isBusy onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const link = () => (
-  <Button isLink onClick={action('clicked')}>
+	<Button isLink onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );
 
 export const focus = () => (
-  <Button focus onClick={action('clicked')}>
+	<Button focus onClick={ action( 'clicked' ) }>
     Click Me
-  </Button>
+	</Button>
 );

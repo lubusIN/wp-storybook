@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/components": "^7.3.1",
-    "@wordpress/compose": "^3.6.0"
+    "@wordpress/components": "^7.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -24,8 +23,15 @@
     "@storybook/addon-viewport": "^5.1.11",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@wordpress/eslint-plugin": "^3.1.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.4.0",
     "react-github-corner": "^2.3.0",
     "storybook-readme": "^5.0.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/recommended"
+    ]
   }
 }

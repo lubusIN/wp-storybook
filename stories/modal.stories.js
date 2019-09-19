@@ -15,59 +15,59 @@ import ModalReadme from '@wordpress/components/src/modal/README.md';
  * Stories
  */
 export default {
-  title: 'Components|Modal',
-  decorators: [withReadme(ModalReadme)],
+	title: 'Components|Modal',
+	decorators: [ withReadme( ModalReadme ) ],
 };
 
-export const basic = () => {
-  const [isOpen, setIsOpen] = useState( false );
-  return (
-    <div>
-      <Button isDefault onClick={() => setIsOpen(true)}>
+export const Basic = () => {
+	const [ isOpen, setIsOpen ] = useState( false );
+	return (
+		<div>
+			<Button isDefault onClick={ () => setIsOpen( true ) }>
         Open Modal
-      </Button>
-      {isOpen ? (
-        <Modal onRequestClose={() => setIsOpen(false)}>
-          <h1>I am modal 😀</h1>
-        </Modal>
-      ) : null}
-    </div>
-  )
+			</Button>
+			{ isOpen ? (
+				<Modal onRequestClose={ () => setIsOpen( false ) }>
+					<h1>I am modal <span role="img" aria-label="Smiling">😀</span></h1>
+				</Modal>
+			) : null }
+		</div>
+	);
 };
 
-export const withTitle = () => {
-  const [isOpen, setIsOpen] = useState( false );
+export const WithTitle = () => {
+	const [ isOpen, setIsOpen ] = useState( false );
 
-  return (
-    <div>
-      <Button isDefault onClick={() => setIsOpen(true)}>
+	return (
+		<div>
+			<Button isDefault onClick={ () => setIsOpen( true ) }>
         Open Modal
-      </Button>
-      {isOpen ? (
-        <Modal title="This is my modal" onRequestClose={() => setIsOpen(false)}>
-          <h1>I am modal 😀</h1>
-        </Modal>
-      ) : null}
-    </div>
-  )
+			</Button>
+			{ isOpen ? (
+				<Modal title="This is my modal" onRequestClose={ () => setIsOpen( false ) }>
+					<h1>I am modal <span role="img" aria-label="Smiling">😀</span></h1>
+				</Modal>
+			) : null }
+		</div>
+	);
 };
 
 export const ModalWithCustomClose = () => {
-  const [isOpen, setIsOpen] = useState( false );
+	const [ isOpen, setIsOpen ] = useState( false );
 
-  return (
-    <div>
-      <Button isDefault onClick={() => setIsOpen(true)}>
+	return (
+		<div>
+			<Button isDefault onClick={ () => setIsOpen( true ) }>
         Open Modal
-      </Button>
-      {isOpen ? (
-        <Modal onRequestClose={() => setIsOpen(false)}>
-          <h1>I am modal 😀</h1>
-          <Button isDefault onClick={() => setIsOpen(false)}>
+			</Button>
+			{ isOpen ? (
+				<Modal onRequestClose={ () => setIsOpen( false ) }>
+					<h1>I am modal <span role="img" aria-label="Smiling">😀</span></h1>
+					<Button isDefault onClick={ () => setIsOpen( false ) }>
             My custom close button
-          </Button>
-        </Modal>
-      ) : null}
-    </div>
-  )
+					</Button>
+				</Modal>
+			) : null }
+		</div>
+	);
 };

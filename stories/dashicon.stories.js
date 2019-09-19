@@ -17,8 +17,8 @@ import { Dashicon } from '@wordpress/components';
 import DashiconReadme from '@wordpress/components/src/dashicon/README.md';
 
 export default {
-  title: 'Components|Dashicon',
-  decorators: [withReadme(DashiconReadme)],
+	title: 'Components|Dashicon',
+	decorators: [ withReadme( DashiconReadme ) ],
 };
 
 export const basic = () => <Dashicon icon="wordpress" />;

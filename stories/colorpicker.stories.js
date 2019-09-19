@@ -1,7 +1,7 @@
 /**
  * External Dependencies
  */
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { withReadme } from 'storybook-readme';
 
@@ -15,18 +15,18 @@ import ColorPickerReadme from '@wordpress/components/src/color-picker/README.md'
  * Stories
  */
 export default {
-  title: 'Components|ColorPicker',
-  decorators: [withReadme(ColorPickerReadme)],
+	title: 'Components|ColorPicker',
+	decorators: [ withReadme( ColorPickerReadme ) ],
 };
 
-export const basic = () => {
-  const [color, setColor] = useState( '#f00' );
+export const Basic = () => {
+	const [ color, setColor ] = useState( '#f00' );
 
-  return <ColorPicker color={color} onChangeComplete={value => setColor(value.hex)} />;
+	return <ColorPicker color={ color } onChangeComplete={ ( value ) => setColor( value.hex ) } />;
 };
 
-export const disableAlpha = () => {
-  const [color, setColor] = useState( '#f00' );
+export const DisableAlpha = () => {
+	const [ color, setColor ] = useState( '#f00' );
 
-  return <ColorPicker color={color} onChangeComplete={value => setColor(value.hex)} disableAlpha />;
+	return <ColorPicker color={ color } onChangeComplete={ ( value ) => setColor( value.hex ) } disableAlpha />;
 };

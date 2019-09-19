@@ -15,31 +15,31 @@ import TextareaControlReadme from '@wordpress/components/src/textarea-control/RE
  * Stories
  */
 export default {
-  title: 'Components|TextareaControl',
-  decorators: [withReadme(TextareaControlReadme)],
+	title: 'Components|TextareaControl',
+	decorators: [ withReadme( TextareaControlReadme ) ],
 };
 
-export const basic = () => {
-  const [text, setText] = useState();
+export const Basic = () => {
+	const [ text, setText ] = useState();
 
-  return (
-    <TextareaControl 
-      label="Text" 
-      value={text} 
-      onChange={text => setText( text )} 
-      />
-  )
+	return (
+		<TextareaControl
+			label="Text"
+			value={ text }
+			onChange={ ( newText ) => setText( newText ) }
+		/>
+	);
 };
 
-export const withHelp = () => {
-  const [text, setText] = useState();
+export const WithHelp = () => {
+	const [ text, setText ] = useState();
 
-  return (
-    <TextareaControl 
-    label="Text" 
-    help="Enter some text"
-    value={text} 
-    onChange={text => setText( text )} 
-    />
-  )
+	return (
+		<TextareaControl
+			label="Text"
+			help="Enter some text"
+			value={ text }
+			onChange={ ( newText ) => setText( newText ) }
+		/>
+	);
 };

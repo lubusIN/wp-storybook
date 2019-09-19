@@ -14,26 +14,26 @@ import MenuItemsChoiceReadme from '@wordpress/components/src/menu-items-choice/R
  * Stories
  */
 export default {
-  title: 'Components|MenuItemsChoice',
-  decorators: [withReadme(MenuItemsChoiceReadme)],
+	title: 'Components|MenuItemsChoice',
+	decorators: [ withReadme( MenuItemsChoiceReadme ) ],
 };
 
-export const basic = () => {
-  const [mode, setMode] = useState('visual');
+export const Basic = () => {
+	const [ mode, setMode ] = useState( 'visual' );
 
-  const choices = [
-    {
-      value: 'visual',
-      label: 'Visual Editor',
-    },
-    {
-      value: 'text',
-      label: 'Code Editor',
-    },
-  ]
-  return (
-    <MenuGroup label="Editor">
-      <MenuItemsChoice choices={choices} value={mode} onSelect={mode => setMode( mode )} />
-    </MenuGroup>
-  )
+	const choices = [
+		{
+			value: 'visual',
+			label: 'Visual Editor',
+		},
+		{
+			value: 'text',
+			label: 'Code Editor',
+		},
+	];
+	return (
+		<MenuGroup label="Editor">
+			<MenuItemsChoice choices={ choices } value={ mode } onSelect={ ( newMode ) => setMode( newMode ) } />
+		</MenuGroup>
+	);
 };

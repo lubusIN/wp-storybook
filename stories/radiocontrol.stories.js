@@ -15,28 +15,27 @@ import RadioControlReadme from '@wordpress/components/src/radio-control/README.m
  * Stories
  */
 export default {
-  title: 'Components|RadioControl',
-  decorators: [withReadme(RadioControlReadme)],
+	title: 'Components|RadioControl',
+	decorators: [ withReadme( RadioControlReadme ) ],
 };
 
-export const basic = () => {
+export const Basic = () => {
+	const options = [
+		{ label: 'Author', value: 'a' },
+		{ label: 'Editor', value: 'e' },
+	];
 
-  const options = [
-    { label: 'Author', value: 'a' },
-    { label: 'Editor', value: 'e' },
-  ];
+	const [ option, setOption ] = useState( 'a' );
 
-  const [option, setOption] = useState('a');
-
-  return (
-    <RadioControl
-      label="User type"
-      help="The type of the current user"
-      selected={option}
-      options={ options }
-      onChange={option => {
-        setOption( option );
-      }}
-    />
-  )
+	return (
+		<RadioControl
+			label="User type"
+			help="The type of the current user"
+			selected={ option }
+			options={ options }
+			onChange={ ( newOption ) => {
+				setOption( newOption );
+			} }
+		/>
+	);
 };

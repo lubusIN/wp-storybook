@@ -1,7 +1,7 @@
 /**
  * External Dependencies
  */
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { withReadme } from 'storybook-readme';
 
 /**
@@ -14,20 +14,20 @@ import FormTokenFieldReadme from '@wordpress/components/src/form-token-field/REA
  * Stories
  */
 export default {
-  title: 'Components|FormTokenField',
-  decorators: [withReadme(FormTokenFieldReadme)],
+	title: 'Components|FormTokenField',
+	decorators: [ withReadme( FormTokenFieldReadme ) ],
 };
 
-export const basic = () => {
-  const suggestions =  ['Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania'];
-  const [tokens,setTokens] = useState([]);
+export const Basic = () => {
+	const suggestions = [ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ];
+	const [ tokens, setTokens ] = useState( [] );
 
-  return (
-    <FormTokenField
-      value={tokens}
-      suggestions={suggestions}
-      onChange={tokens => setTokens(tokens)}
-      placeholder="Type a continent"
-    />
-  )
+	return (
+		<FormTokenField
+			value={ tokens }
+			suggestions={ suggestions }
+			onChange={ ( newTokens ) => setTokens( newTokens ) }
+			placeholder="Type a continent"
+		/>
+	);
 };

@@ -21,79 +21,79 @@ import RangeControlReadme from '@wordpress/components/src/range-control/README.m
  * Stories
  */
 export default {
-  title: 'Components|RangeControl',
-  decorators: [withReadme(RangeControlReadme)],
+	title: 'Components|RangeControl',
+	decorators: [ withReadme( RangeControlReadme ) ],
 };
 
-export const basic = () => {
-  const [columns, setColumns] = useState( 2 );
-  return (
-    <RangeControl
-      label="Columns"
-      value={columns}
-      onChange={columns => setColumns( columns )}
-      min={2}
-      max={10}
-    />
-  )
+export const Basic = () => {
+	const [ columns, setColumns ] = useState( 2 );
+	return (
+		<RangeControl
+			label="Columns"
+			value={ columns }
+			onChange={ ( newColumns ) => setColumns( newColumns ) }
+			min={ 2 }
+			max={ 10 }
+		/>
+	);
 };
 
-export const withHelp = () => {
-  const [columns, setColumns] = useState( 2 );
-  return (
-    <RangeControl
-      label="Columns"
-      help="Number of columns"
-      value={columns}
-      onChange={columns => setColumns( columns )}
-      min={2}
-      max={10}
-    />
-  )
+export const WithHelp = () => {
+	const [ columns, setColumns ] = useState( 2 );
+	return (
+		<RangeControl
+			label="Columns"
+			help="Number of columns"
+			value={ columns }
+			onChange={ ( newColumns ) => setColumns( newColumns ) }
+			min={ 2 }
+			max={ 10 }
+		/>
+	);
 };
 
-export const withBeforeIcon = () => {
-  const [columns, setColumns] = useState( 2 );
-  return (
-    <RangeControl
-      label="Columns"
-      help="Number of columns"
-      beforeIcon="layout"
-      value={columns}
-      onChange={columns => setColumns( columns )}
-      min={2}
-      max={10}
-    />
-  )
+export const WithBeforeIcon = () => {
+	const [ columns, setColumns ] = useState( 2 );
+	return (
+		<RangeControl
+			label="Columns"
+			help="Number of columns"
+			beforeIcon="layout"
+			value={ columns }
+			onChange={ ( newColumns ) => setColumns( newColumns ) }
+			min={ 2 }
+			max={ 10 }
+		/>
+	);
 };
 
-export const withAfterIcon = () => {
-  const [columns, setColumns] = useState( 2 );
-  return (
-    <RangeControl
-      label="Columns"
-      help="Number of columns"
-      afterIcon="layout"
-      value={columns}
-      onChange={columns => setColumns( columns )}
-      min={2}
-      max={10}
-    />
-  )
+export const WithAfterIcon = () => {
+	const [ columns, setColumns ] = useState( 2 );
+	return (
+		<RangeControl
+			label="Columns"
+			help="Number of columns"
+			afterIcon="layout"
+			value={ columns }
+			onChange={ ( newColumns ) => setColumns( newColumns ) }
+			min={ 2 }
+			max={ 10 }
+		/>
+	);
 };
 
-export const withReset = () => {
-  const [columns, setColumns] = useState( 2 );
-  return (
-    <RangeControl
-      label="Columns"
-      help="Number of columns"
-      afterIcon="layout"
-      value={columns}
-      onChange={columns => setColumns( columns )}
-      min={2}
-      max={10}
-      allowReset={true}
-    />
-  )
+export const WithReset = () => {
+	const [ columns, setColumns ] = useState( 2 );
+	return (
+		<RangeControl
+			label="Columns"
+			help="Number of columns"
+			afterIcon="layout"
+			value={ columns }
+			onChange={ ( newColumns ) => setColumns( newColumns ) }
+			min={ 2 }
+			max={ 10 }
+			allowReset={ true }
+		/>
+	);
 };

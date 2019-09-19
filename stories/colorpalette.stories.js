@@ -15,19 +15,18 @@ import ColorPaletteReadme from '@wordpress/components/src/color-palette/README.m
  * Stories
  */
 export default {
-  title: 'Components|ColorPalette',
-  decorators: [withReadme(ColorPaletteReadme)],
+	title: 'Components|ColorPalette',
+	decorators: [ withReadme( ColorPaletteReadme ) ],
 };
 
-export const basic = () => {
+export const Basic = () => {
+	const colors = [
+		{ name: 'red', color: '#f00' },
+		{ name: 'white', color: '#fff' },
+		{ name: 'blue', color: '#00f' },
+	];
 
-  const colors = [
-    { name: 'red', color: '#f00' },
-    { name: 'white', color: '#fff' },
-    { name: 'blue', color: '#00f' },
-  ];
+	const [ color, setColor ] = useState( '#f00' );
 
-  const [color, setColor] = useState( '#f00' );
-
-  return <ColorPalette colors={colors} value={color} onChange={color => setColor( color )} />;
+	return <ColorPalette colors={ colors } value={ color } onChange={ ( newColor ) => setColor( newColor ) } />;
 };

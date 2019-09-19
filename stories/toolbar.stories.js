@@ -21,21 +21,21 @@ import ToolbarReadme from '@wordpress/components/src/toolbar/README.md';
  * Stories
  */
 export default {
-  title: 'Components|Toolbar',
-  decorators: [withReadme(ToolbarReadme)],
+	title: 'Components|Toolbar',
+	decorators: [ withReadme( ToolbarReadme ) ],
 };
 
-export const basic = () => {
-  const [activeControl, setActiveControl] = useState( 'up' );
-  const controls = ['up', 'down'];
-  
-  const createThumbsControl = (control) => {
-    return {
-      icon: `thumbs-${control}`,
-      title: `Thumbs ${control}`,
-      isActive: activeControl === control,
-      onClick: () => setActiveControl( control ),
-    };
-  }
-  return <Toolbar controls={controls.map(createThumbsControl)} />;
+export const Basic = () => {
+	const [ activeControl, setActiveControl ] = useState( 'up' );
+	const controls = [ 'up', 'down' ];
+
+	const createThumbsControl = ( control ) => {
+		return {
+			icon: `thumbs-${ control }`,
+			title: `Thumbs ${ control }`,
+			isActive: activeControl === control,
+			onClick: () => setActiveControl( control ),
+		};
+	};
+	return <Toolbar controls={ controls.map( createThumbsControl ) } />;
 };

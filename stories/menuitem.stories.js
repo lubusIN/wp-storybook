@@ -16,29 +16,29 @@ import MenuItemReadme from '@wordpress/components/src/menu-item/README.md';
  * Stories
  */
 export default {
-  title: 'Components|MenuItem',
-  decorators: [withReadme(MenuItemReadme)],
+	title: 'Components|MenuItem',
+	decorators: [ withReadme( MenuItemReadme ) ],
 };
 
 export const MenuItemActive = () => {
-  const [isActive, setIsActive] = useState( true );
+	const [ isActive, setIsActive ] = useState( true );
 
-  return (
-    <MenuItem
-      icon={isActive ? 'yes' : 'no'}
-      isSelected={isActive}
-      onClick={() => setIsActive(!isActive)}
-    >
+	return (
+		<MenuItem
+			icon={ isActive ? 'yes' : 'no' }
+			isSelected={ isActive }
+			onClick={ () => setIsActive( ! isActive ) }
+		>
       Click To Toggle
-    </MenuItem>
-  );
-}
+		</MenuItem>
+	);
+};
 
-export const basic = () => <MenuItem onClick={action('Clicked')}> Menu Item </MenuItem>;
+export const basic = () => <MenuItem onClick={ action( 'Clicked' ) }> Menu Item </MenuItem>;
 
 export const withIcon = () => (
-  <MenuItem icon="image-rotate-right" onClick={action('Clicked')}>
-    {' '}
-    Menu Item{' '}
-  </MenuItem>
+	<MenuItem icon="image-rotate-right" onClick={ action( 'Clicked' ) }>
+		{ ' ' }
+    Menu Item{ ' ' }
+	</MenuItem>
 );

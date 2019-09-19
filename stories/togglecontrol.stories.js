@@ -22,31 +22,31 @@ import { useState } from '@storybook/addons';
  * Stories
  */
 export default {
-  title: 'Components|ToggleControl',
-  decorators: [withReadme(ToggleControlReadme)],
+	title: 'Components|ToggleControl',
+	decorators: [ withReadme( ToggleControlReadme ) ],
 };
 
-export const basic = () => {
-  const [hasFixedBackground, setHasFixedBackground] = useState();
+export const Basic = () => {
+	const [ hasFixedBackground, setHasFixedBackground ] = useState();
 
-  return (
-    <ToggleControl
-      label="Fixed Background"
-      checked={hasFixedBackground}
-      onChange={() => setHasFixedBackground(!hasFixedBackground )}
-    />
-  )
+	return (
+		<ToggleControl
+			label="Fixed Background"
+			checked={ hasFixedBackground }
+			onChange={ () => setHasFixedBackground( ! hasFixedBackground ) }
+		/>
+	);
 };
 
-export const withHelp = () => {
-  const [hasFixedBackground, setHasFixedBackground] = useState();
+export const WithHelp = () => {
+	const [ hasFixedBackground, setHasFixedBackground ] = useState();
 
-  return (
-    <ToggleControl
-      label="Fixed Background"
-      help={hasFixedBackground ? 'Has fixed background.' : 'No fixed background.'}
-      checked={hasFixedBackground}
-      onChange={() => setHasFixedBackground(!hasFixedBackground )}
-    />
-  )
+	return (
+		<ToggleControl
+			label="Fixed Background"
+			help={ hasFixedBackground ? 'Has fixed background.' : 'No fixed background.' }
+			checked={ hasFixedBackground }
+			onChange={ () => setHasFixedBackground( ! hasFixedBackground ) }
+		/>
+	);
 };

@@ -15,64 +15,64 @@ import CheckboxControlReadme from '@wordpress/components/src/checkbox-control/RE
  * Stories
  */
 export default {
-  title: 'Components|CheckboxControl',
-  decorators: [withReadme(CheckboxControlReadme)],
+	title: 'Components|CheckboxControl',
+	decorators: [ withReadme( CheckboxControlReadme ) ],
 };
 
-export const basic = () => {
-  const [isChecked, setIsChecked] = useState();
+export const Basic = () => {
+	const [ isChecked, setIsChecked ] = useState();
 
-  return (
-    <CheckboxControl
-      label="Is author"
-      checked={isChecked}
-      onChange={isChecked => {
-        setIsChecked( isChecked );
-      }}
-    />)
+	return (
+		<CheckboxControl
+			label="Is author"
+			checked={ isChecked }
+			onChange={ ( checked ) => {
+				setIsChecked( checked );
+			} }
+		/> );
 };
 
-export const checked = () => {
-  const [isChecked, setIsChecked] = useState();
+export const Checked = () => {
+	const [ isChecked, setIsChecked ] = useState();
 
-  return (
-    <CheckboxControl
-      label="Is author"
-      checked={isChecked}
-      onChange={isChecked => {
-        setIsChecked( isChecked );
-      }}
-  />
-  )
+	return (
+		<CheckboxControl
+			label="Is author"
+			checked={ isChecked }
+			onChange={ ( checked ) => {
+				setIsChecked( checked );
+			} }
+		/>
+	);
 };
 
-export const withHeading = () => {
-  const [isChecked, setIsChecked] = useState();
+export const WithHeading = () => {
+	const [ isChecked, setIsChecked ] = useState();
 
-  return (
-    <CheckboxControl
-      heading="User"
-      label="Is author"
-      checked={isChecked}
-      onChange={isChecked => {
-        setIsChecked( isChecked );
-      }}
-    />
-  );
+	return (
+		<CheckboxControl
+			heading="User"
+			label="Is author"
+			checked={ isChecked }
+			onChange={ ( checked ) => {
+				setIsChecked( checked );
+			} }
+		/>
+	);
 };
 
-export const withHelp = () => {
-  const [isChecked, setIsChecked] = useState();
+export const WithHelp = () => {
+	const [ isChecked, setIsChecked ] = useState();
 
-  return (
-    <CheckboxControl
-      heading="User"
-      label="Is author"
-      help="Is the user a author or not?"
-      checked={isChecked}
-      onChange={isChecked => {
-        setIsChecked( isChecked );
-      }}
-    />
-  );
+	return (
+		<CheckboxControl
+			heading="User"
+			label="Is author"
+			help="Is the user a author or not?"
+			checked={ isChecked }
+			onChange={ ( checked ) => {
+				setIsChecked( checked );
+			} }
+		/>
+	);
 };

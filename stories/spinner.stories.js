@@ -12,8 +12,8 @@ import { Spinner } from '@wordpress/components';
 import SpinnerReadme from '@wordpress/components/src/spinner/README.md';
 
 export default {
-  title: 'Components|Spinner',
-  decorators: [withReadme(SpinnerReadme)],
+	title: 'Components|Spinner',
+	decorators: [ withReadme( SpinnerReadme ) ],
 };
 
 export const basic = () => <Spinner />;

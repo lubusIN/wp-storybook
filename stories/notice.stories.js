@@ -12,20 +12,20 @@ import { Notice } from '@wordpress/components';
 import NoticeReadme from '@wordpress/components/src/notice/README.md';
 
 export default {
-  title: 'Components|Notice',
-  decorators: [withReadme(NoticeReadme)],
+	title: 'Components|Notice',
+	decorators: [ withReadme( NoticeReadme ) ],
 };
 
 export const basic = () => (
-  <React.Fragment>
-    <Notice status="error">An unknown error occurred.</Notice>
+	<React.Fragment>
+		<Notice status="error">An unknown error occurred.</Notice>
 
-    <br />
+		<br />
 
-    <Notice status="warning">Results might not be as expected.</Notice>
+		<Notice status="warning">Results might not be as expected.</Notice>
 
-    <br />
+		<br />
 
-    <Notice status="success">Process completed successfully.</Notice>
-  </React.Fragment>
+		<Notice status="success">Process completed successfully.</Notice>
+	</React.Fragment>
 );

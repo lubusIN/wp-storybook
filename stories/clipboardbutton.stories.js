@@ -15,21 +15,21 @@ import ClipboardButtonReadme from '@wordpress/components/src/clipboard-button/RE
  * Stories
  */
 export default {
-  title: 'Components|ClipboardButton',
-  decorators: [withReadme(ClipboardButtonReadme)],
+	title: 'Components|ClipboardButton',
+	decorators: [ withReadme( ClipboardButtonReadme ) ],
 };
 
-export const basic = () => {
-  const [hasCopied, setHasCopied] = useState();
+export const Basic = () => {
+	const [ hasCopied, setHasCopied ] = useState();
 
-  return (
-    <ClipboardButton
-      isPrimary
-      text="Text to be copied."
-      onCopy={() => setHasCopied( true  )}
-      onFinishCopy={() => setHasCopied( false )}
-    >
-      {hasCopied ? 'Copied!' : 'Copy Text'}
-    </ClipboardButton>
-  );
+	return (
+		<ClipboardButton
+			isPrimary
+			text="Text to be copied."
+			onCopy={ () => setHasCopied( true ) }
+			onFinishCopy={ () => setHasCopied( false ) }
+		>
+			{ hasCopied ? 'Copied!' : 'Copy Text' }
+		</ClipboardButton>
+	);
 };

@@ -18,10 +18,10 @@ import { IconButton } from '@wordpress/components';
 import IconButtonReadme from '@wordpress/components/src/icon-button/README.md';
 
 export default {
-  title: 'Components|IconButton',
-  decorators: [withReadme(IconButtonReadme)],
+	title: 'Components|IconButton',
+	decorators: [ withReadme( IconButtonReadme ) ],
 };
 
 export const basic = () => (
-  <IconButton icon="admin-appearance" label="Styles" onClick={action('Clicked')} />
+	<IconButton icon="admin-appearance" label="Styles" onClick={ action( 'Clicked' ) } />
 );
