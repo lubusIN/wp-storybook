@@ -14,6 +14,10 @@ import ButtonReadme from '@wordpress/components/src/button/README.md';
 
 export default {
 	title: 'Components|Button',
+	parameters: {
+		component: Button,
+		decorators: [ withReadme( ButtonReadme ) ],
+	},
 };
 
 export const basic = () => <Button onClick={ action( 'clicked' ) }>Click Me</Button>;

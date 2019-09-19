@@ -3,8 +3,6 @@
  */
 import React from 'react';
 
-import { withReadme } from 'storybook-readme';
-
 /**
  * WordPress Dependencies
  */
@@ -16,7 +14,6 @@ import BaseControlReadme from '@wordpress/components/src/base-control/README.md'
  */
 export default {
 	title: 'Components|BaseControl',
-	decorators: [ withReadme( BaseControlReadme ) ],
 };
 
 export const basic = () => (
