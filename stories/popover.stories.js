@@ -1,32 +1,29 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { Button, Popover } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import PopoverReadme from '@wordpress/components/src/popover/README.md';
 
 /**
  * Stories
  */
-const PopoverBasic = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export default {
+    title: 'Components|Popover',
+    decorators: [withReadme(PopoverReadme)],
+  };
+  
+export const basic = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover>
@@ -35,16 +32,13 @@ const PopoverBasic = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverNoArrow = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const noArrow = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover noArrow>
@@ -53,16 +47,13 @@ const PopoverNoArrow = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverMiddleLeft = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const middleLeft = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="middle left">
@@ -71,16 +62,13 @@ const PopoverMiddleLeft = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverMiddleRight = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const middleRight = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="middle right">
@@ -89,16 +77,13 @@ const PopoverMiddleRight = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverMiddleCenter = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const middleCenter = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="middle center">
@@ -107,16 +92,13 @@ const PopoverMiddleCenter = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverTopLeft = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const topLeft = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="top left">
@@ -125,16 +107,13 @@ const PopoverTopLeft = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverTopRight = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const topRight = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="top right">
@@ -143,16 +122,13 @@ const PopoverTopRight = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverTopCenter = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const topCenter = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="top center">
@@ -161,34 +137,28 @@ const PopoverTopCenter = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverBottomLeft = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const bottomLeft = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
-                <Popover position="bottom left">
+                <Popover position="bottom Left">
                     Popover is toggled!
                 </Popover>
             )}
         </Button>
     );
-});
+};
 
-const PopoverBottomRight = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const bottomRight = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="bottom right">
@@ -197,16 +167,13 @@ const PopoverBottomRight = withState({
             )}
         </Button>
     );
-});
+};
 
-const PopoverBottomCenter = withState({
-    isVisible: false,
-})(({ isVisible, setState }) => {
-    const toggleVisible = () => {
-        setState((state) => ({ isVisible: !state.isVisible }));
-    };
+export const bottomCenter = () => {
+    const [isVisible, setIsVisible] = useState( false );
+
     return (
-        <Button isDefault onClick={toggleVisible}>
+        <Button isDefault onClick={ () => setIsVisible( !isVisible ) }>
             Toggle Popover!
             {isVisible && (
                 <Popover position="bottom center">
@@ -215,21 +182,4 @@ const PopoverBottomCenter = withState({
             )}
         </Button>
     );
-});
-
-storiesOf('Components|Popover', module)
-    .addDecorator(withReadme(PopoverReadme))
-    .add('Basic', () => <PopoverBasic />)
-    .add('No Arrow', () => <PopoverNoArrow />);
-
-storiesOf('Components|Popover/Position', module)
-    .addDecorator(withReadme(PopoverReadme))
-    .add('Middle Right', () => <PopoverMiddleRight />)
-    .add('Middle Left', () => <PopoverMiddleLeft />)
-    .add('Middle Center', () => <PopoverMiddleCenter />)
-    .add('Top Left', () => <PopoverTopLeft />)
-    .add('Top Right', () => <PopoverTopRight />)
-    .add('Top Center', () => <PopoverTopCenter />)
-    .add('Bottom Left', () => <PopoverBottomLeft />)
-    .add('Bottom Right', () => <PopoverBottomRight />)
-    .add('Bottom Center', () => <PopoverBottomCenter />);
+};

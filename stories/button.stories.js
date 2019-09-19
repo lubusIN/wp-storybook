@@ -3,31 +3,71 @@
  */
 import React from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
-import { Button } from "@wordpress/components";
+import { Button } from '@wordpress/components';
 import ButtonReadme from '@wordpress/components/src/button/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|Button', module)
-  .addDecorator(withReadme(ButtonReadme))
-  .add('Basic', () => <Button onClick={action('clicked')}>Click Me</Button>)
-  .add('Href', () => <Button href="https://www.wordpress.org" onClick={action('clicked')}>Click Me</Button>)
-  .add('Default', () => <Button isDefault onClick={action('clicked')}>Click Me</Button>)
-  .add('Primary', () => <Button isPrimary onClick={action('clicked')}>Click Me</Button>)
-  .add('Large', () => <Button isLarge onClick={action('clicked')}>Click Me</Button>)
-  .add('Small', () => <Button isSmall onClick={action('clicked')}>Click Me</Button>)
-  .add('Toggled', () => <Button isToggled onClick={action('clicked')}>Click Me</Button>)
-  .add('Busy', () => <Button isPrimary isBusy onClick={action('clicked')}>Click Me</Button>)
-  .add('Link', () => <Button isLink onClick={action('clicked')}>Click Me</Button>)
-  .add('Focus', () => <Button focus onClick={action('clicked')}>Click Me</Button>);
+export default {
+  title: 'Components|Button',
+};
+
+export const basic = () => <Button onClick={action('clicked')}>Click Me</Button>;
+
+export const href = () => (
+  <Button href="https://www.wordpress.org" onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const isDefault = () => (
+  <Button isDefault onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const primary = () => (
+  <Button isPrimary onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const large = () => (
+  <Button isLarge onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const small = () => (
+  <Button isSmall onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const toggled = () => (
+  <Button isToggled onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const busy = () => (
+  <Button isPrimary isBusy onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const link = () => (
+  <Button isLink onClick={action('clicked')}>
+    Click Me
+  </Button>
+);
+
+export const focus = () => (
+  <Button focus onClick={action('clicked')}>
+    Click Me
+  </Button>
+);

@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * Storybook Dependencies
  */
-import { storiesOf, addDecorator, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { withReadme, withDocs } from 'storybook-readme';
 
 /**
@@ -15,12 +15,12 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { Dropdown, Button } from '@wordpress/components';
 import DropdownReadme from '@wordpress/components/src/dropdown/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|Dropdown', module)
-    .addDecorator(withReadme(DropdownReadme))
-    .add('Basic', () => (
+export default {
+  title: 'Components|Dropdown',
+  decorators: [withReadme(DropdownReadme)],
+};
+
+export const basic = () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
@@ -36,12 +36,9 @@ storiesOf('Components|Dropdown', module)
                 </div>
             )}
         />
-    ));
+    );
 
-storiesOf('Components|Dropdown', module)
-    .addDecorator(withReadme(DropdownReadme))
-    .addParameters({ viewport: { defaultViewport: 'iphone5' } })
-    .add('ExpandOnMobile', () => (
+export const expandOnMobile = () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
@@ -58,8 +55,9 @@ storiesOf('Components|Dropdown', module)
                 </div>
             )}
         />
-    ))
-    .add('HeaderTitle', () => (
+    );
+
+export const headerTitle = () => (
         <Dropdown
             className="my-container-class-name"
             contentClassName="my-popover-content-classname"
@@ -77,4 +75,4 @@ storiesOf('Components|Dropdown', module)
                 </div>
             )}
         />
-    ));
+    );

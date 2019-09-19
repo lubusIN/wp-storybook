@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * Storybook Dependencies
  */
-import { storiesOf, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
@@ -15,34 +15,38 @@ import { withReadme, withDocs } from 'storybook-readme';
  * WordPress Dependencies
  */
 import { ToggleControl } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import ToggleControlReadme from '@wordpress/components/src/toggle-control/README.md';
+import { useState } from '@storybook/addons';
 
 /**
  * Stories
  */
-const ToggleControlBasic = withState({
-  hasFixedBackground: false,
-})(({ hasFixedBackground, setState }) => (
-  <ToggleControl
-    label="Fixed Background"
-    checked={hasFixedBackground}
-    onChange={() => setState((state) => ({ hasFixedBackground: !state.hasFixedBackground }))}
-  />
-));
+export default {
+  title: 'Components|ToggleControl',
+  decorators: [withReadme(ToggleControlReadme)],
+};
 
-const ToggleControlHelp = withState({
-  hasFixedBackground: false,
-})(({ hasFixedBackground, setState }) => (
-  <ToggleControl
-    label="Fixed Background"
-    help={hasFixedBackground ? 'Has fixed background.' : 'No fixed background.'}
-    checked={hasFixedBackground}
-    onChange={() => setState((state) => ({ hasFixedBackground: !state.hasFixedBackground }))}
-  />
-));
+export const basic = () => {
+  const [hasFixedBackground, setHasFixedBackground] = useState();
 
-storiesOf('Components|ToggleControl', module)
-  .addDecorator(withReadme(ToggleControlReadme))
-  .add('Basic', () => <ToggleControlBasic />)
-  .add('With Help', () => <ToggleControlHelp />);
+  return (
+    <ToggleControl
+      label="Fixed Background"
+      checked={hasFixedBackground}
+      onChange={() => setHasFixedBackground(!hasFixedBackground )}
+    />
+  )
+};
+
+export const withHelp = () => {
+  const [hasFixedBackground, setHasFixedBackground] = useState();
+
+  return (
+    <ToggleControl
+      label="Fixed Background"
+      help={hasFixedBackground ? 'Has fixed background.' : 'No fixed background.'}
+      checked={hasFixedBackground}
+      onChange={() => setHasFixedBackground(!hasFixedBackground )}
+    />
+  )
+};

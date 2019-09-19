@@ -3,10 +3,6 @@
  */
 import React from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
@@ -15,27 +11,21 @@ import { withReadme } from 'storybook-readme';
 import { Notice } from '@wordpress/components';
 import NoticeReadme from '@wordpress/components/src/notice/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|Notice', module)
-  .addDecorator(withReadme(NoticeReadme))
-  .add('Basic', () => (
-    <React.Fragment>
-      <Notice status="error">
-        An unknown error occurred.
-       </Notice>
+export default {
+  title: 'Components|Notice',
+  decorators: [withReadme(NoticeReadme)],
+};
 
-      <br />
+export const basic = () => (
+  <React.Fragment>
+    <Notice status="error">An unknown error occurred.</Notice>
 
-      <Notice status="warning">
-        Results might not be as expected.
-        </Notice>
+    <br />
 
-      <br />
+    <Notice status="warning">Results might not be as expected.</Notice>
 
-      <Notice status="success">
-        Process completed successfully.
-       </Notice>
-    </React.Fragment>
-  ));
+    <br />
+
+    <Notice status="success">Process completed successfully.</Notice>
+  </React.Fragment>
+);

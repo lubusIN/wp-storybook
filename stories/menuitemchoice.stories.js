@@ -1,46 +1,39 @@
 /**
  * External Dependencies
  */
-import React from 'react';
-
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { MenuGroup, MenuItemsChoice } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import MenuItemsChoiceReadme from '@wordpress/components/src/menu-items-choice/README.md';
 
 /**
  * Stories
  */
-const MenuItemsChoiceBasic = withState({
-    mode: 'visual',
-    choices: [
-        {
-            value: 'visual',
-            label: 'Visual Editor',
-        },
-        {
-            value: 'text',
-            label: 'Code Editor',
-        },
-    ],
-})(({ mode, choices, setState }) => (
-    <MenuGroup label="Editor">
-        <MenuItemsChoice
-            choices={choices}
-            value={mode}
-            onSelect={mode => setState({ mode })}
-        />
-    </MenuGroup>
-));
+export default {
+  title: 'Components|MenuItemsChoice',
+  decorators: [withReadme(MenuItemsChoiceReadme)],
+};
 
-storiesOf('Components|MenuItemsChoice', module)
-    .addDecorator(withReadme(MenuItemsChoiceReadme))
-    .add('Basic', () => <MenuItemsChoiceBasic />);
+export const basic = () => {
+  const [mode, setMode] = useState('visual');
+
+  const choices = [
+    {
+      value: 'visual',
+      label: 'Visual Editor',
+    },
+    {
+      value: 'text',
+      label: 'Code Editor',
+    },
+  ]
+  return (
+    <MenuGroup label="Editor">
+      <MenuItemsChoice choices={choices} value={mode} onSelect={mode => setMode( mode )} />
+    </MenuGroup>
+  )
+};
