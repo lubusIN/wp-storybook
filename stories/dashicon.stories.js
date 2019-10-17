@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * Storybook Dependencies
  */
-import { storiesOf, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
 
@@ -16,11 +16,9 @@ import { withReadme, withDocs } from 'storybook-readme';
 import { Dashicon } from '@wordpress/components';
 import DashiconReadme from '@wordpress/components/src/dashicon/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|Dashicon', module)
-  .addDecorator(withReadme(DashiconReadme))
-  .add('Basic', () => (
-    <Dashicon icon="wordpress" />
-  ));
+export default {
+	title: 'Components|Dashicon',
+	decorators: [ withReadme( DashiconReadme ) ],
+};
+
+export const basic = () => <Dashicon icon="wordpress" />;

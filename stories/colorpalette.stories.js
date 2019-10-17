@@ -1,42 +1,32 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { ColorPalette } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import ColorPaletteReadme from '@wordpress/components/src/color-palette/README.md';
 
 /**
  * Stories
  */
-const ColorPaletteBasic = withState( {
-  color: '#f00',
-} )( ( { color, setState } ) => { 
-  const colors = [ 
-      { name: 'red', color: '#f00' }, 
-      { name: 'white', color: '#fff' }, 
-      { name: 'blue', color: '#00f' }, 
-  ];
+export default {
+	title: 'Components|ColorPalette',
+	decorators: [ withReadme( ColorPaletteReadme ) ],
+};
 
-  return ( 
-      <ColorPalette 
-          colors={ colors } 
-          value={ color }
-          onChange={ ( color ) => setState( { color } ) } 
-      />
-  ) 
-} );
+export const Basic = () => {
+	const colors = [
+		{ name: 'red', color: '#f00' },
+		{ name: 'white', color: '#fff' },
+		{ name: 'blue', color: '#00f' },
+	];
 
-storiesOf('Components|ColorPalette', module)
-  .addDecorator(withReadme(ColorPaletteReadme))
-  .add('Basic', () => <ColorPaletteBasic />);
+	const [ color, setColor ] = useState( '#f00' );
+
+	return <ColorPalette colors={ colors } value={ color } onChange={ ( newColor ) => setColor( newColor ) } />;
+};

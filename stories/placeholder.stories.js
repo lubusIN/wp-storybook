@@ -3,10 +3,6 @@
  */
 import React from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
@@ -15,14 +11,9 @@ import { withReadme } from 'storybook-readme';
 import { Placeholder } from '@wordpress/components';
 import PlaceholderReadme from '@wordpress/components/src/placeholder/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|PlaceHolder', module)
-  .addDecorator(withReadme(PlaceholderReadme))
-  .add('Basic', () => (
-    <Placeholder
-      icon="wordpress-alt"
-      label="Placeholder"
-    />
-  ));
+export default {
+	title: 'Components|PlaceHolder',
+	decorators: [ withReadme( PlaceholderReadme ) ],
+};
+
+export const basic = () => <Placeholder icon="wordpress-alt" label="Placeholder" />;

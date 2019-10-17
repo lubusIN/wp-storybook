@@ -1,56 +1,63 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { SelectControl } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import SelectControlReadme from '@wordpress/components/src/select-control/README.md';
 
 /**
  * Stories
  */
-const SelectControlBasic = withState({
-    size: '50%',
-})(({ size, setState }) => (
-    <SelectControl
-        label="Size"
-        value={size}
-        options={[
-            { label: 'Big', value: '100%' },
-            { label: 'Medium', value: '50%' },
-            { label: 'Small', value: '25%' },
-        ]}
-        onChange={(size) => { setState({ size }) }}
-    />
-));
+export default {
+	title: 'Components|SelectControl',
+	decorators: [ withReadme( SelectControlReadme ) ],
+};
 
-const SelectControlHelp = withState({
-    size: '50%',
-})(({ size, setState }) => (
-    <SelectControl
-        label="Size"
-        help="Select font size"
-        value={size}
-        options={[
-            { label: 'Big', value: '100%' },
-            { label: 'Medium', value: '50%' },
-            { label: 'Small', value: '25%' },
-        ]}
-        onChange={(size) => { setState({ size }) }}
-    />
-));
+export const Basic = () => {
+	const [ size, setSize ] = useState( '50%' );
 
-storiesOf('Components|SelectControl', module)
-    .addDecorator(withReadme(SelectControlReadme))
-    .add('Basic', () => <SelectControlBasic />)
-    .add('With Help', () => <SelectControlHelp />);
+	const sizes = [
+		{ label: 'Big', value: '100%' },
+		{ label: 'Medium', value: '50%' },
+		{ label: 'Small', value: '25%' },
+	];
+
+	return (
+		<SelectControl
+			label="Size"
+			value={ size }
+			options={ sizes }
+			onChange={ ( newSize ) => {
+				setSize( newSize );
+			} }
+		/>
+	);
+};
+
+export const WithHelp = () => {
+	const [ size, setSize ] = useState( '50%' );
+
+	const sizes = [
+		{ label: 'Big', value: '100%' },
+		{ label: 'Medium', value: '50%' },
+		{ label: 'Small', value: '25%' },
+	];
+
+	return (
+		<SelectControl
+			label="Size"
+			help="Select font size"
+			value={ size }
+			options={ sizes }
+			onChange={ ( newSize ) => {
+				setSize( newSize );
+			} }
+		/>
+	);
+};

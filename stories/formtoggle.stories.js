@@ -1,43 +1,35 @@
 /**
  * External Dependencies
  */
-import React from 'react';
-
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { FormToggle } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import FormToggleReadme from '@wordpress/components/src/form-toggle/README.md';
 
 /**
  * Stories
  */
-const BasicToggle = withState({
-  checked: false,
-})(({ checked, setState }) => (
-  <FormToggle
-    checked={checked}
-    onChange={() => setState(state => ({ checked: !state.checked }))}
-  />
-))
+export default {
+	title: 'Components|FormToggle',
+	decorators: [ withReadme( FormToggleReadme ) ],
+};
 
-const CheckedToggle = withState({
-  checked: true,
-})(({ checked, setState }) => (
-  <FormToggle
-    checked={checked}
-    onChange={() => setState(state => ({ checked: !state.checked }))}
-  />
-))
+export const BasicToggle = () => {
+	const [ checked, setChecked ] = useState( false );
 
-storiesOf('Components|FormToggle', module)
-  .addDecorator(withReadme(FormToggleReadme))
-  .add('Basic', () => <BasicToggle />)
-  .add('Checked', () => <CheckedToggle />);
+	return (
+		<FormToggle checked={ checked } onChange={ () => setChecked( ! checked ) } />
+	);
+};
+
+export const CheckedToggle = () => {
+	const [ checked, setChecked ] = useState( true );
+
+	return (
+		<FormToggle checked={ checked } onChange={ () => setChecked( ! checked ) } />
+	);
+};

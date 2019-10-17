@@ -1,46 +1,45 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { TextControl } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import TextControlReadme from '@wordpress/components/src/text-control/README.md';
 
 /**
  * Stories
  */
-const TextControlBasic = withState({
-  className: '',
-})(({ className, setState }) => (
-  <TextControl
-    label="Additional CSS Class"
-    value={className}
-    onChange={(className) => setState({ className })}
-  />
-));
+export default {
+	title: 'Components|TextControl',
+	decorators: [ withReadme( TextControlReadme ) ],
+};
 
-const TextControlHelp = withState({
-  className: '',
-})(({ className, setState }) => (
-  <TextControl
-    label="Additional CSS Class"
-    help="Custom classes for block"
-    value={className}
-    onChange={(className) => setState({ className })}
-  />
-));
+export const Basic = () => {
+	const [ className, setClassName ] = useState();
 
-storiesOf('Components|TextControl', module)
-  .addDecorator(withReadme(TextControlReadme))
-  .add('Basic', () => <TextControlBasic />)
-  .add('With Help', () => <TextControlHelp />);
+	return (
+		<TextControl
+			label="Additional CSS Class"
+			value={ className }
+			onChange={ ( newClassName ) => setClassName( newClassName ) }
+		/>
+	);
+};
+
+export const WithHelp = () => {
+	const [ className, setClassName ] = useState();
+
+	return (
+		<TextControl
+			label="Additional CSS Class"
+			help="Custom classes for block"
+			value={ className }
+			onChange={ ( newClassName ) => setClassName( newClassName ) }
+		/>
+	);
+};

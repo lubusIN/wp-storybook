@@ -1,48 +1,32 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { ColorPicker } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import ColorPickerReadme from '@wordpress/components/src/color-picker/README.md';
 
 /**
  * Stories
  */
-const ColorPickerBasic = withState( {
-  color: '#f00',
-} )( ( { color, setState } ) => {
-  return (
-      <ColorPicker
-          color={ color }
-          onChangeComplete={ ( value ) => setState( value.hex ) }
-      />
-  );
-} );
+export default {
+	title: 'Components|ColorPicker',
+	decorators: [ withReadme( ColorPickerReadme ) ],
+};
 
-const ColorPickerDisableAlpha = withState( {
-  color: '#f00',
-} )( ( { color, setState } ) => {
-  return (
-      <ColorPicker
-          color={ color }
-          onChangeComplete={ ( value ) => setState( value.hex ) }
-          disableAlpha
-      />
-  );
-} );
+export const Basic = () => {
+	const [ color, setColor ] = useState( '#f00' );
 
-storiesOf('Components|ColorPicker', module)
-  .addDecorator(withReadme(ColorPickerReadme))
-  .add('Basic', () => <ColorPickerBasic />)
-  .add('DisableAlpha', () => <ColorPickerDisableAlpha />);
+	return <ColorPicker color={ color } onChangeComplete={ ( value ) => setColor( value.hex ) } />;
+};
+
+export const DisableAlpha = () => {
+	const [ color, setColor ] = useState( '#f00' );
+
+	return <ColorPicker color={ color } onChangeComplete={ ( value ) => setColor( value.hex ) } disableAlpha />;
+};

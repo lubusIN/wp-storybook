@@ -3,10 +3,6 @@
  */
 import React from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
@@ -15,38 +11,31 @@ import { withReadme } from 'storybook-readme';
 import { PanelBody } from '@wordpress/components';
 import PanelBodyReadme from '@wordpress/components/src/panel/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|PanelBody', module)
-  .addDecorator(withReadme(PanelBodyReadme))
-  .add('Basic', () => (
-    <React.Fragment>
-      <PanelBody
-        title="My Block s Settings"
-        initialOpen={true}
-      >
-        My Panel Inputs and Labels
-        </PanelBody>
-    </React.Fragment>
-  ))
-  .add('With Header Icon', () => (
-    <React.Fragment>
-      <PanelBody
-        title="My Block Settings"
-        icon="welcome-widgets-menus"
-      >
-        My Panel Inputs and Labels
-        </PanelBody>
-    </React.Fragment>
-  ))
-  .add('Collasped', () => (
-    <React.Fragment>
-      <PanelBody
-        title="My Block Settings"
-        initialOpen={false}
-      >
-        My Panel Inputs and Labels
-        </PanelBody>
-    </React.Fragment>
-  ));
+export default {
+	title: 'Components|PanelBody',
+	decorators: [ withReadme( PanelBodyReadme ) ],
+};
+
+export const basic = () => (
+	<React.Fragment>
+		<PanelBody title="My Block s Settings" initialOpen={ true }>
+      My Panel Inputs and Labels
+		</PanelBody>
+	</React.Fragment>
+);
+
+export const withHeaderIcon = () => (
+	<React.Fragment>
+		<PanelBody title="My Block Settings" icon="welcome-widgets-menus">
+      My Panel Inputs and Labels
+		</PanelBody>
+	</React.Fragment>
+);
+
+export const collasped = () => (
+	<React.Fragment>
+		<PanelBody title="My Block Settings" initialOpen={ false }>
+      My Panel Inputs and Labels
+		</PanelBody>
+	</React.Fragment>
+);

@@ -1,41 +1,39 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useReact, useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { KeyboardShortcuts } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import KeyboardShortcutsReadme from '@wordpress/components/src/keyboard-shortcuts/README.md';
 
 /**
  * Stories
  */
-const KeyboardShortcutsBasic = withState({
-    isAllSelected: false,
-})(({ isAllSelected, setState }) => {
-    const selectAll = () => {
-        setState({ isAllSelected: true })
-    };
+export default {
+	title: 'Components|KeyboardShortcuts',
+	decorators: [ withReadme( KeyboardShortcutsReadme ) ],
+};
 
-    return (
-        <div>
-            <KeyboardShortcuts shortcuts={{
-                'mod+a': selectAll,
-            }} />
-            [cmd/ctrl + A] Combination pressed? {isAllSelected ? 'Yes' : 'No'}
-        </div>
-    )
-})
+export const Basic = () => {
+	const [ isAllSelected, setIsAllSelected ] = useState( false );
 
-storiesOf('Components|KeyboardShortcuts', module)
-    .addDecorator(withReadme(KeyboardShortcutsReadme))
-    .add('Basic', () => <KeyboardShortcutsBasic />);
+	const selectAll = () => {
+		setIsAllSelected( true );
+	};
+
+	return (
+		<div>
+			<KeyboardShortcuts
+				shortcuts={ {
+					'mod+a': selectAll,
+				} }
+			/>
+      [cmd/ctrl + A] Combination pressed? { isAllSelected ? 'Yes' : 'No' }
+		</div>
+	);
+};

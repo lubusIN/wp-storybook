@@ -1,48 +1,34 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { DateTimePicker } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import DateTimePickerReadme from '@wordpress/components/src/date-time/README.md';
 
 /**
  * Stories
  */
-const DateTimePickerBasic = withState( {
-  date: new Date(),
-} )( ( { date, setState } ) => {
-  return (
-      <DateTimePicker
-          currentDate={ date }
-          onChange={ ( date ) => setState( { date } ) }
-      />
-  );
-} );
+export default {
+	title: 'Components|DateTimePicker',
+	decorators: [ withReadme( DateTimePickerReadme ) ],
+};
 
-const DateTimePicker12Hrs = withState( {
-  date: new Date(),
-} )( ( { date, setState } ) => {
-  return (
-      <DateTimePicker
-          currentDate={ date }
-          onChange={ ( date ) => setState( { date } ) }
-          is12Hour={ true }
-      />
-  );
-} );
+export const Basic = () => {
+	const [ date, setDate ] = useState( new Date() );
 
-storiesOf('Components|DateTimePicker', module)
-  .addDecorator(withReadme(DateTimePickerReadme))
-  .add('Basic', () => <DateTimePickerBasic/> )
-  .add('12Hrs', () => <DateTimePicker12Hrs/> );
+	return <DateTimePicker currentDate={ date } onChange={ ( date ) => setDate( date ) } />;
+};
+
+export const Is12Hrs = () => {
+	const [ date, setDate ] = useState( new Date() );
+
+	return (
+		<DateTimePicker currentDate={ date } onChange={ ( newDate ) => setDate( newDate ) } is12Hour={ true } />
+	);
+};

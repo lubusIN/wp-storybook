@@ -1,12 +1,12 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
 /**
  * Storybook Dependencies
  */
-import { storiesOf, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withReadme, withDocs } from 'storybook-readme';
@@ -15,29 +15,27 @@ import { withReadme, withDocs } from 'storybook-readme';
  * WordPress Dependencies
  */
 import { Toolbar } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import ToolbarReadme from '@wordpress/components/src/toolbar/README.md';
 
 /**
  * Stories
  */
-const ToolbarBasic = withState({
-    activeControl: 'up',
-})(({ activeControl, setState }) => {
-    function createThumbsControl(thumbs) {
-        return {
-            icon: `thumbs-${thumbs}`,
-            title: `Thumbs ${thumbs}`,
-            isActive: activeControl === thumbs,
-            onClick: () => setState({ activeControl: thumbs }),
-        };
-    }
+export default {
+	title: 'Components|Toolbar',
+	decorators: [ withReadme( ToolbarReadme ) ],
+};
 
-    return (
-        <Toolbar controls={['up', 'down'].map(createThumbsControl)} />
-    );
-});
+export const Basic = () => {
+	const [ activeControl, setActiveControl ] = useState( 'up' );
+	const controls = [ 'up', 'down' ];
 
-storiesOf('Components|Toolbar', module)
-    .addDecorator(withReadme(ToolbarReadme))
-    .add('Basic', () => <ToolbarBasic />);
+	const createThumbsControl = ( control ) => {
+		return {
+			icon: `thumbs-${ control }`,
+			title: `Thumbs ${ control }`,
+			isActive: activeControl === control,
+			onClick: () => setActiveControl( control ),
+		};
+	};
+	return <Toolbar controls={ controls.map( createThumbsControl ) } />;
+};

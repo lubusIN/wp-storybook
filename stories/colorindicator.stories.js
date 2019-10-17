@@ -3,10 +3,6 @@
  */
 import React from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
@@ -15,9 +11,9 @@ import { withReadme } from 'storybook-readme';
 import { ColorIndicator } from '@wordpress/components';
 import ColorIndicatorReadme from '@wordpress/components/src/color-indicator/README.md';
 
-/**
- * Stories
- */
-storiesOf('Components|ColorIndicator', module)
-  .addDecorator(withReadme(ColorIndicatorReadme))
-  .add('Basic', () => <ColorIndicator colorValue="#f00" /> );
+export default {
+	title: 'Components|ColorIndicator',
+	decorators: [ withReadme( ColorIndicatorReadme ) ],
+};
+
+export const basic = () => <ColorIndicator colorValue="#f00" />;

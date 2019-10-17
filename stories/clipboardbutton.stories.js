@@ -1,37 +1,35 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { ClipboardButton } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import ClipboardButtonReadme from '@wordpress/components/src/clipboard-button/README.md';
 
 /**
  * Stories
  */
-const ClipboardButtonBasic =withState( {
-    hasCopied: false,
-} )( ( { hasCopied, setState } ) => ( 
-    <ClipboardButton
-        isPrimary
-        text="Text to be copied."
-        onCopy={ () => setState( { hasCopied: true } ) }
-        onFinishCopy={ () => setState( { hasCopied: false } ) }
-    >
-        { hasCopied ? 'Copied!' : 'Copy Text' }
-    </ClipboardButton>
-) );
+export default {
+	title: 'Components|ClipboardButton',
+	decorators: [ withReadme( ClipboardButtonReadme ) ],
+};
 
-storiesOf('Components|ClipboardButton', module)
- .addDecorator(withReadme(ClipboardButtonReadme))
- .add('Basic', () => <ClipboardButtonBasic />);
+export const Basic = () => {
+	const [ hasCopied, setHasCopied ] = useState();
+
+	return (
+		<ClipboardButton
+			isPrimary
+			text="Text to be copied."
+			onCopy={ () => setHasCopied( true ) }
+			onFinishCopy={ () => setHasCopied( false ) }
+		>
+			{ hasCopied ? 'Copied!' : 'Copy Text' }
+		</ClipboardButton>
+	);
+};

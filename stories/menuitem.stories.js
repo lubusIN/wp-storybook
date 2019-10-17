@@ -1,12 +1,8 @@
 /**
  * External Dependencies
  */
-import React from 'react';
+import React, { useState } from 'react';
 
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withReadme } from 'storybook-readme';
 
@@ -14,30 +10,35 @@ import { withReadme } from 'storybook-readme';
  * WordPress Dependencies
  */
 import { MenuItem } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import MenuItemReadme from '@wordpress/components/src/menu-item/README.md';
 
 /**
  * Stories
  */
-const MenuItemActive = withState({
-  isActive: true,
-})(({ isActive, setState }) => (
-  <MenuItem
-    icon={isActive ? 'yes' : 'no'}
-    isSelected={isActive}
-    onClick={() => setState(state => ({ isActive: !state.isActive }))}
-  >
-    Click To Toggle
-  </MenuItem>
-));
+export default {
+	title: 'Components|MenuItem',
+	decorators: [ withReadme( MenuItemReadme ) ],
+};
 
-storiesOf('Components|MenuItem', module)
-  .addDecorator(withReadme(MenuItemReadme))
-  .add('Basic', () => (
-    <MenuItem onClick={action('Clicked')}> Menu Item </MenuItem>
-  ))
-  .add('with Icon', () => (
-    <MenuItem icon="image-rotate-right" onClick={action('Clicked')}> Menu Item </MenuItem>
-  ))
-  .add('with Selected', () => <MenuItemActive />);
+export const MenuItemActive = () => {
+	const [ isActive, setIsActive ] = useState( true );
+
+	return (
+		<MenuItem
+			icon={ isActive ? 'yes' : 'no' }
+			isSelected={ isActive }
+			onClick={ () => setIsActive( ! isActive ) }
+		>
+      Click To Toggle
+		</MenuItem>
+	);
+};
+
+export const basic = () => <MenuItem onClick={ action( 'Clicked' ) }> Menu Item </MenuItem>;
+
+export const withIcon = () => (
+	<MenuItem icon="image-rotate-right" onClick={ action( 'Clicked' ) }>
+		{ ' ' }
+    Menu Item{ ' ' }
+	</MenuItem>
+);

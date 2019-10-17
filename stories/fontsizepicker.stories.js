@@ -1,53 +1,47 @@
 /**
  * External Dependencies
  */
-import React from 'react';
-
-/**
- * Storybook Dependencies
- */
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import { withReadme } from 'storybook-readme';
 
 /**
  * WordPress Dependencies
  */
 import { FontSizePicker } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
 import FontSizePickerReadme from '@wordpress/components/src/font-size-picker/README.md';
 
 /**
  * Stories
  */
-const FontSizePickerBasic = withState( {
-    fontSize: 16,
-} )( ( { fontSize, setState } ) => {
-    const fontSizes = [
-        {
-            name:'Small',
-            slug: 'small',
-            size: 12,
-        },
-        {
-            name: 'Big',
-            slug: 'big',
-            size: 26,
-        },
-    ];
-    const fallbackFontSize = 16;
+export default {
+	title: 'Components|FontSizePicker',
+	decorators: [ withReadme( FontSizePickerReadme ) ],
+};
 
-    return (
-        <FontSizePicker
-            fontSizes={ fontSizes }
-            value={ fontSize }
-            fallbackFontSize={ fallbackFontSize }
-            onChange={ ( newFontSize ) => {
-                setState( { fontSize: newFontSize } );
-            } }
-        />
-    );
-} );
+export const Basic = () => {
+	const [ fontSize, setFontSize ] = useState( 26 );
+	const fontSizes = [
+		{
+			name: 'Small',
+			slug: 'small',
+			size: 12,
+		},
+		{
+			name: 'Big',
+			slug: 'big',
+			size: 26,
+		},
+	];
+	const fallbackFontSize = 16;
 
-storiesOf('Components|FontSizePicker', module)
-  .addDecorator(withReadme(FontSizePickerReadme))
-  .add('Basic', () => <FontSizePickerBasic />);
+	return (
+		<FontSizePicker
+			fontSizes={ fontSizes }
+			value={ fontSize }
+			fallbackFontSize={ fallbackFontSize }
+			onChange={ ( newFontSize ) => {
+				setFontSize( newFontSize );
+			} }
+		/>
+	);
+};
